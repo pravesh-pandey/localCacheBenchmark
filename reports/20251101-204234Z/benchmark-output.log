@@ -9,15 +9,15 @@
 # Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Throughput, ops/time
 # Benchmark: com.benchmark.cache.CacheBenchmark.getCaffeine
-# Parameters: (dataSize = 1000, valueProfile = LINES_10)
+# Parameters: (dataSize = 1, valueProfile = LINES_1)
 
 # Run progress: 0.00% complete, ETA 00:00:48
 # Fork: 1 of 1
-Iteration   1: 42950.527 ops/s
+Iteration   1: 95113785.296 ops/s
 
 
 Result "com.benchmark.cache.CacheBenchmark.getCaffeine":
-  42950.527 ops/s
+  95113785.296 ops/s
 
 
 # JMH version: 1.37
@@ -31,15 +31,15 @@ Result "com.benchmark.cache.CacheBenchmark.getCaffeine":
 # Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Throughput, ops/time
 # Benchmark: com.benchmark.cache.CacheBenchmark.getGuava
-# Parameters: (dataSize = 1000, valueProfile = LINES_10)
+# Parameters: (dataSize = 1, valueProfile = LINES_1)
 
-# Run progress: 4.17% complete, ETA 00:01:51
+# Run progress: 4.17% complete, ETA 00:00:53
 # Fork: 1 of 1
-Iteration   1: 37539.168 ops/s
+Iteration   1: 41100203.086 ops/s
 
 
 Result "com.benchmark.cache.CacheBenchmark.getGuava":
-  37539.168 ops/s
+  41100203.086 ops/s
 
 
 # JMH version: 1.37
@@ -53,15 +53,15 @@ Result "com.benchmark.cache.CacheBenchmark.getGuava":
 # Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Throughput, ops/time
 # Benchmark: com.benchmark.cache.CacheBenchmark.getLocalCache
-# Parameters: (dataSize = 1000, valueProfile = LINES_10)
+# Parameters: (dataSize = 1, valueProfile = LINES_1)
 
-# Run progress: 8.33% complete, ETA 00:01:46
+# Run progress: 8.33% complete, ETA 00:00:51
 # Fork: 1 of 1
-Iteration   1: 52.457 ops/s
+Iteration   1: 53278.904 ops/s
 
 
 Result "com.benchmark.cache.CacheBenchmark.getLocalCache":
-  52.457 ops/s
+  53278.904 ops/s
 
 
 # JMH version: 1.37
@@ -75,15 +75,15 @@ Result "com.benchmark.cache.CacheBenchmark.getLocalCache":
 # Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Throughput, ops/time
 # Benchmark: com.benchmark.cache.CacheBenchmark.getMapDB
-# Parameters: (dataSize = 1000, valueProfile = LINES_10)
+# Parameters: (dataSize = 1, valueProfile = LINES_1)
 
-# Run progress: 12.50% complete, ETA 00:01:40
+# Run progress: 12.50% complete, ETA 00:00:48
 # Fork: 1 of 1
-Iteration   1: 1880.416 ops/s
+Iteration   1: 8742169.825 ops/s
 
 
 Result "com.benchmark.cache.CacheBenchmark.getMapDB":
-  1880.416 ops/s
+  8742169.825 ops/s
 
 
 # JMH version: 1.37
@@ -97,15 +97,15 @@ Result "com.benchmark.cache.CacheBenchmark.getMapDB":
 # Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Throughput, ops/time
 # Benchmark: com.benchmark.cache.CacheBenchmark.mixedCaffeine
-# Parameters: (dataSize = 1000, valueProfile = LINES_10)
+# Parameters: (dataSize = 1, valueProfile = LINES_1)
 
-# Run progress: 16.67% complete, ETA 00:01:35
+# Run progress: 16.67% complete, ETA 00:00:46
 # Fork: 1 of 1
-Iteration   1: 48492.882 ops/s
+Iteration   1: 42671031.339 ops/s
 
 
 Result "com.benchmark.cache.CacheBenchmark.mixedCaffeine":
-  48492.882 ops/s
+  42671031.339 ops/s
 
 
 # JMH version: 1.37
@@ -119,15 +119,15 @@ Result "com.benchmark.cache.CacheBenchmark.mixedCaffeine":
 # Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Throughput, ops/time
 # Benchmark: com.benchmark.cache.CacheBenchmark.mixedGuava
-# Parameters: (dataSize = 1000, valueProfile = LINES_10)
+# Parameters: (dataSize = 1, valueProfile = LINES_1)
 
-# Run progress: 20.83% complete, ETA 00:01:31
+# Run progress: 20.83% complete, ETA 00:00:44
 # Fork: 1 of 1
-Iteration   1: 33797.306 ops/s
+Iteration   1: 30103238.786 ops/s
 
 
 Result "com.benchmark.cache.CacheBenchmark.mixedGuava":
-  33797.306 ops/s
+  30103238.786 ops/s
 
 
 # JMH version: 1.37
@@ -141,15 +141,15 @@ Result "com.benchmark.cache.CacheBenchmark.mixedGuava":
 # Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Throughput, ops/time
 # Benchmark: com.benchmark.cache.CacheBenchmark.mixedLocalCache
-# Parameters: (dataSize = 1000, valueProfile = LINES_10)
+# Parameters: (dataSize = 1, valueProfile = LINES_1)
 
-# Run progress: 25.00% complete, ETA 00:01:26
+# Run progress: 25.00% complete, ETA 00:00:41
 # Fork: 1 of 1
-Iteration   1: 2.153 ops/s
+Iteration   1: 450.739 ops/s
 
 
 Result "com.benchmark.cache.CacheBenchmark.mixedLocalCache":
-  2.153 ops/s
+  450.739 ops/s
 
 
 # JMH version: 1.37
@@ -163,15 +163,15 @@ Result "com.benchmark.cache.CacheBenchmark.mixedLocalCache":
 # Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Throughput, ops/time
 # Benchmark: com.benchmark.cache.CacheBenchmark.mixedMapDB
-# Parameters: (dataSize = 1000, valueProfile = LINES_10)
+# Parameters: (dataSize = 1, valueProfile = LINES_1)
 
-# Run progress: 29.17% complete, ETA 00:01:22
+# Run progress: 29.17% complete, ETA 00:00:39
 # Fork: 1 of 1
-Iteration   1: 323.563 ops/s
+Iteration   1: 534.683 ops/s
 
 
 Result "com.benchmark.cache.CacheBenchmark.mixedMapDB":
-  323.563 ops/s
+  534.683 ops/s
 
 
 # JMH version: 1.37
@@ -185,15 +185,15 @@ Result "com.benchmark.cache.CacheBenchmark.mixedMapDB":
 # Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Throughput, ops/time
 # Benchmark: com.benchmark.cache.CacheBenchmark.putCaffeine
-# Parameters: (dataSize = 1000, valueProfile = LINES_10)
+# Parameters: (dataSize = 1, valueProfile = LINES_1)
 
-# Run progress: 33.33% complete, ETA 00:01:17
+# Run progress: 33.33% complete, ETA 00:00:37
 # Fork: 1 of 1
-Iteration   1: 33969.717 ops/s
+Iteration   1: 41060515.667 ops/s
 
 
 Result "com.benchmark.cache.CacheBenchmark.putCaffeine":
-  33969.717 ops/s
+  41060515.667 ops/s
 
 
 # JMH version: 1.37
@@ -207,15 +207,15 @@ Result "com.benchmark.cache.CacheBenchmark.putCaffeine":
 # Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Throughput, ops/time
 # Benchmark: com.benchmark.cache.CacheBenchmark.putGuava
-# Parameters: (dataSize = 1000, valueProfile = LINES_10)
+# Parameters: (dataSize = 1, valueProfile = LINES_1)
 
-# Run progress: 37.50% complete, ETA 00:01:12
+# Run progress: 37.50% complete, ETA 00:00:34
 # Fork: 1 of 1
-Iteration   1: 29175.889 ops/s
+Iteration   1: 29753559.741 ops/s
 
 
 Result "com.benchmark.cache.CacheBenchmark.putGuava":
-  29175.889 ops/s
+  29753559.741 ops/s
 
 
 # JMH version: 1.37
@@ -229,15 +229,15 @@ Result "com.benchmark.cache.CacheBenchmark.putGuava":
 # Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Throughput, ops/time
 # Benchmark: com.benchmark.cache.CacheBenchmark.putLocalCache
-# Parameters: (dataSize = 1000, valueProfile = LINES_10)
+# Parameters: (dataSize = 1, valueProfile = LINES_1)
 
-# Run progress: 41.67% complete, ETA 00:01:07
+# Run progress: 41.67% complete, ETA 00:00:32
 # Fork: 1 of 1
-Iteration   1: 0.459 ops/s
+Iteration   1: 314.002 ops/s
 
 
 Result "com.benchmark.cache.CacheBenchmark.putLocalCache":
-  0.459 ops/s
+  314.002 ops/s
 
 
 # JMH version: 1.37
@@ -251,15 +251,15 @@ Result "com.benchmark.cache.CacheBenchmark.putLocalCache":
 # Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Throughput, ops/time
 # Benchmark: com.benchmark.cache.CacheBenchmark.putMapDB
-# Parameters: (dataSize = 1000, valueProfile = LINES_10)
+# Parameters: (dataSize = 1, valueProfile = LINES_1)
 
-# Run progress: 45.83% complete, ETA 00:01:03
+# Run progress: 45.83% complete, ETA 00:00:30
 # Fork: 1 of 1
-Iteration   1: 277.772 ops/s
+Iteration   1: 336.805 ops/s
 
 
 Result "com.benchmark.cache.CacheBenchmark.putMapDB":
-  277.772 ops/s
+  336.805 ops/s
 
 
 # JMH version: 1.37
@@ -273,15 +273,15 @@ Result "com.benchmark.cache.CacheBenchmark.putMapDB":
 # Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Throughput, ops/time
 # Benchmark: com.benchmark.cache.PersistentCacheBenchmark.getChronicleMap
-# Parameters: (dataSize = 1000, valueProfile = LINES_10)
+# Parameters: (dataSize = 1, valueProfile = LINES_1)
 
-# Run progress: 50.00% complete, ETA 00:00:58
+# Run progress: 50.00% complete, ETA 00:00:27
 # Fork: 1 of 1
-Iteration   1: 2513.093 ops/s
+Iteration   1: 4882923.201 ops/s
 
 
 Result "com.benchmark.cache.PersistentCacheBenchmark.getChronicleMap":
-  2513.093 ops/s
+  4882923.201 ops/s
 
 
 # JMH version: 1.37
@@ -295,15 +295,15 @@ Result "com.benchmark.cache.PersistentCacheBenchmark.getChronicleMap":
 # Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Throughput, ops/time
 # Benchmark: com.benchmark.cache.PersistentCacheBenchmark.getH2MVStore
-# Parameters: (dataSize = 1000, valueProfile = LINES_10)
+# Parameters: (dataSize = 1, valueProfile = LINES_1)
 
-# Run progress: 54.17% complete, ETA 00:00:53
+# Run progress: 54.17% complete, ETA 00:00:25
 # Fork: 1 of 1
-Iteration   1: 20788.662 ops/s
+Iteration   1: 214847251.469 ops/s
 
 
 Result "com.benchmark.cache.PersistentCacheBenchmark.getH2MVStore":
-  20788.662 ops/s
+  214847251.469 ops/s
 
 
 # JMH version: 1.37
@@ -317,15 +317,15 @@ Result "com.benchmark.cache.PersistentCacheBenchmark.getH2MVStore":
 # Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Throughput, ops/time
 # Benchmark: com.benchmark.cache.PersistentCacheBenchmark.getLocalCache
-# Parameters: (dataSize = 1000, valueProfile = LINES_10)
+# Parameters: (dataSize = 1, valueProfile = LINES_1)
 
-# Run progress: 58.33% complete, ETA 00:00:49
+# Run progress: 58.33% complete, ETA 00:00:23
 # Fork: 1 of 1
-Iteration   1: 46.711 ops/s
+Iteration   1: 45924.145 ops/s
 
 
 Result "com.benchmark.cache.PersistentCacheBenchmark.getLocalCache":
-  46.711 ops/s
+  45924.145 ops/s
 
 
 # JMH version: 1.37
@@ -339,15 +339,15 @@ Result "com.benchmark.cache.PersistentCacheBenchmark.getLocalCache":
 # Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Throughput, ops/time
 # Benchmark: com.benchmark.cache.PersistentCacheBenchmark.getMapDB
-# Parameters: (dataSize = 1000, valueProfile = LINES_10)
+# Parameters: (dataSize = 1, valueProfile = LINES_1)
 
-# Run progress: 62.50% complete, ETA 00:00:44
+# Run progress: 62.50% complete, ETA 00:00:21
 # Fork: 1 of 1
-Iteration   1: 1868.729 ops/s
+Iteration   1: 8103430.756 ops/s
 
 
 Result "com.benchmark.cache.PersistentCacheBenchmark.getMapDB":
-  1868.729 ops/s
+  8103430.756 ops/s
 
 
 # JMH version: 1.37
@@ -361,15 +361,15 @@ Result "com.benchmark.cache.PersistentCacheBenchmark.getMapDB":
 # Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Throughput, ops/time
 # Benchmark: com.benchmark.cache.PersistentCacheBenchmark.mixedChronicleMap
-# Parameters: (dataSize = 1000, valueProfile = LINES_10)
+# Parameters: (dataSize = 1, valueProfile = LINES_1)
 
-# Run progress: 66.67% complete, ETA 00:00:39
+# Run progress: 66.67% complete, ETA 00:00:19
 # Fork: 1 of 1
-Iteration   1: 753.461 ops/s
+Iteration   1: 2158860.659 ops/s
 
 
 Result "com.benchmark.cache.PersistentCacheBenchmark.mixedChronicleMap":
-  753.461 ops/s
+  2158860.659 ops/s
 
 
 # JMH version: 1.37
@@ -383,15 +383,15 @@ Result "com.benchmark.cache.PersistentCacheBenchmark.mixedChronicleMap":
 # Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Throughput, ops/time
 # Benchmark: com.benchmark.cache.PersistentCacheBenchmark.mixedH2MVStore
-# Parameters: (dataSize = 1000, valueProfile = LINES_10)
+# Parameters: (dataSize = 1, valueProfile = LINES_1)
 
-# Run progress: 70.83% complete, ETA 00:00:35
+# Run progress: 70.83% complete, ETA 00:00:17
 # Fork: 1 of 1
-Iteration   1: 1198.234 ops/s
+Iteration   1: 7665.748 ops/s
 
 
 Result "com.benchmark.cache.PersistentCacheBenchmark.mixedH2MVStore":
-  1198.234 ops/s
+  7665.748 ops/s
 
 
 # JMH version: 1.37
@@ -405,15 +405,15 @@ Result "com.benchmark.cache.PersistentCacheBenchmark.mixedH2MVStore":
 # Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Throughput, ops/time
 # Benchmark: com.benchmark.cache.PersistentCacheBenchmark.mixedLocalCache
-# Parameters: (dataSize = 1000, valueProfile = LINES_10)
+# Parameters: (dataSize = 1, valueProfile = LINES_1)
 
-# Run progress: 75.00% complete, ETA 00:00:30
+# Run progress: 75.00% complete, ETA 00:00:15
 # Fork: 1 of 1
-Iteration   1: 2.118 ops/s
+Iteration   1: 440.302 ops/s
 
 
 Result "com.benchmark.cache.PersistentCacheBenchmark.mixedLocalCache":
-  2.118 ops/s
+  440.302 ops/s
 
 
 # JMH version: 1.37
@@ -427,15 +427,15 @@ Result "com.benchmark.cache.PersistentCacheBenchmark.mixedLocalCache":
 # Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Throughput, ops/time
 # Benchmark: com.benchmark.cache.PersistentCacheBenchmark.mixedMapDB
-# Parameters: (dataSize = 1000, valueProfile = LINES_10)
+# Parameters: (dataSize = 1, valueProfile = LINES_1)
 
-# Run progress: 79.17% complete, ETA 00:00:25
+# Run progress: 79.17% complete, ETA 00:00:12
 # Fork: 1 of 1
-Iteration   1: 321.182 ops/s
+Iteration   1: 519.512 ops/s
 
 
 Result "com.benchmark.cache.PersistentCacheBenchmark.mixedMapDB":
-  321.182 ops/s
+  519.512 ops/s
 
 
 # JMH version: 1.37
@@ -449,15 +449,15 @@ Result "com.benchmark.cache.PersistentCacheBenchmark.mixedMapDB":
 # Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Throughput, ops/time
 # Benchmark: com.benchmark.cache.PersistentCacheBenchmark.putChronicleMap
-# Parameters: (dataSize = 1000, valueProfile = LINES_10)
+# Parameters: (dataSize = 1, valueProfile = LINES_1)
 
-# Run progress: 83.33% complete, ETA 00:00:20
+# Run progress: 83.33% complete, ETA 00:00:10
 # Fork: 1 of 1
-Iteration   1: 470.554 ops/s
+Iteration   1: 2229715.964 ops/s
 
 
 Result "com.benchmark.cache.PersistentCacheBenchmark.putChronicleMap":
-  470.554 ops/s
+  2229715.964 ops/s
 
 
 # JMH version: 1.37
@@ -471,15 +471,15 @@ Result "com.benchmark.cache.PersistentCacheBenchmark.putChronicleMap":
 # Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Throughput, ops/time
 # Benchmark: com.benchmark.cache.PersistentCacheBenchmark.putH2MVStore
-# Parameters: (dataSize = 1000, valueProfile = LINES_10)
+# Parameters: (dataSize = 1, valueProfile = LINES_1)
 
-# Run progress: 87.50% complete, ETA 00:00:15
+# Run progress: 87.50% complete, ETA 00:00:07
 # Fork: 1 of 1
-Iteration   1: 1050.596 ops/s
+Iteration   1: 8467.783 ops/s
 
 
 Result "com.benchmark.cache.PersistentCacheBenchmark.putH2MVStore":
-  1050.596 ops/s
+  8467.783 ops/s
 
 
 # JMH version: 1.37
@@ -493,15 +493,15 @@ Result "com.benchmark.cache.PersistentCacheBenchmark.putH2MVStore":
 # Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Throughput, ops/time
 # Benchmark: com.benchmark.cache.PersistentCacheBenchmark.putLocalCache
-# Parameters: (dataSize = 1000, valueProfile = LINES_10)
+# Parameters: (dataSize = 1, valueProfile = LINES_1)
 
-# Run progress: 91.67% complete, ETA 00:00:10
+# Run progress: 91.67% complete, ETA 00:00:05
 # Fork: 1 of 1
-Iteration   1: 0.467 ops/s
+Iteration   1: 443.181 ops/s
 
 
 Result "com.benchmark.cache.PersistentCacheBenchmark.putLocalCache":
-  0.467 ops/s
+  443.181 ops/s
 
 
 # JMH version: 1.37
@@ -515,18 +515,18 @@ Result "com.benchmark.cache.PersistentCacheBenchmark.putLocalCache":
 # Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Throughput, ops/time
 # Benchmark: com.benchmark.cache.PersistentCacheBenchmark.putMapDB
-# Parameters: (dataSize = 1000, valueProfile = LINES_10)
+# Parameters: (dataSize = 1, valueProfile = LINES_1)
 
-# Run progress: 95.83% complete, ETA 00:00:05
+# Run progress: 95.83% complete, ETA 00:00:02
 # Fork: 1 of 1
-Iteration   1: 290.388 ops/s
+Iteration   1: 519.130 ops/s
 
 
 Result "com.benchmark.cache.PersistentCacheBenchmark.putMapDB":
-  290.388 ops/s
+  519.130 ops/s
 
 
-# Run complete. Total time: 00:02:03
+# Run complete. Total time: 00:01:02
 
 REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
 why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
@@ -540,30 +540,30 @@ works, and factor in a small probability of new VM bugs. Additionally, while com
 different JVMs are already problematic, the performance difference caused by different Blackhole
 modes can be very significant. Please make sure you use the consistent Blackhole mode for comparisons.
 
-Benchmark                                   (dataSize)  (valueProfile)   Mode  Cnt      Score   Error  Units
-CacheBenchmark.getCaffeine                        1000        LINES_10  thrpt       42950.527          ops/s
-CacheBenchmark.getGuava                           1000        LINES_10  thrpt       37539.168          ops/s
-CacheBenchmark.getLocalCache                      1000        LINES_10  thrpt          52.457          ops/s
-CacheBenchmark.getMapDB                           1000        LINES_10  thrpt        1880.416          ops/s
-CacheBenchmark.mixedCaffeine                      1000        LINES_10  thrpt       48492.882          ops/s
-CacheBenchmark.mixedGuava                         1000        LINES_10  thrpt       33797.306          ops/s
-CacheBenchmark.mixedLocalCache                    1000        LINES_10  thrpt           2.153          ops/s
-CacheBenchmark.mixedMapDB                         1000        LINES_10  thrpt         323.563          ops/s
-CacheBenchmark.putCaffeine                        1000        LINES_10  thrpt       33969.717          ops/s
-CacheBenchmark.putGuava                           1000        LINES_10  thrpt       29175.889          ops/s
-CacheBenchmark.putLocalCache                      1000        LINES_10  thrpt           0.459          ops/s
-CacheBenchmark.putMapDB                           1000        LINES_10  thrpt         277.772          ops/s
-PersistentCacheBenchmark.getChronicleMap          1000        LINES_10  thrpt        2513.093          ops/s
-PersistentCacheBenchmark.getH2MVStore             1000        LINES_10  thrpt       20788.662          ops/s
-PersistentCacheBenchmark.getLocalCache            1000        LINES_10  thrpt          46.711          ops/s
-PersistentCacheBenchmark.getMapDB                 1000        LINES_10  thrpt        1868.729          ops/s
-PersistentCacheBenchmark.mixedChronicleMap        1000        LINES_10  thrpt         753.461          ops/s
-PersistentCacheBenchmark.mixedH2MVStore           1000        LINES_10  thrpt        1198.234          ops/s
-PersistentCacheBenchmark.mixedLocalCache          1000        LINES_10  thrpt           2.118          ops/s
-PersistentCacheBenchmark.mixedMapDB               1000        LINES_10  thrpt         321.182          ops/s
-PersistentCacheBenchmark.putChronicleMap          1000        LINES_10  thrpt         470.554          ops/s
-PersistentCacheBenchmark.putH2MVStore             1000        LINES_10  thrpt        1050.596          ops/s
-PersistentCacheBenchmark.putLocalCache            1000        LINES_10  thrpt           0.467          ops/s
-PersistentCacheBenchmark.putMapDB                 1000        LINES_10  thrpt         290.388          ops/s
+Benchmark                                   (dataSize)  (valueProfile)   Mode  Cnt          Score   Error  Units
+CacheBenchmark.getCaffeine                           1         LINES_1  thrpt        95113785.296          ops/s
+CacheBenchmark.getGuava                              1         LINES_1  thrpt        41100203.086          ops/s
+CacheBenchmark.getLocalCache                         1         LINES_1  thrpt           53278.904          ops/s
+CacheBenchmark.getMapDB                              1         LINES_1  thrpt         8742169.825          ops/s
+CacheBenchmark.mixedCaffeine                         1         LINES_1  thrpt        42671031.339          ops/s
+CacheBenchmark.mixedGuava                            1         LINES_1  thrpt        30103238.786          ops/s
+CacheBenchmark.mixedLocalCache                       1         LINES_1  thrpt             450.739          ops/s
+CacheBenchmark.mixedMapDB                            1         LINES_1  thrpt             534.683          ops/s
+CacheBenchmark.putCaffeine                           1         LINES_1  thrpt        41060515.667          ops/s
+CacheBenchmark.putGuava                              1         LINES_1  thrpt        29753559.741          ops/s
+CacheBenchmark.putLocalCache                         1         LINES_1  thrpt             314.002          ops/s
+CacheBenchmark.putMapDB                              1         LINES_1  thrpt             336.805          ops/s
+PersistentCacheBenchmark.getChronicleMap             1         LINES_1  thrpt         4882923.201          ops/s
+PersistentCacheBenchmark.getH2MVStore                1         LINES_1  thrpt       214847251.469          ops/s
+PersistentCacheBenchmark.getLocalCache               1         LINES_1  thrpt           45924.145          ops/s
+PersistentCacheBenchmark.getMapDB                    1         LINES_1  thrpt         8103430.756          ops/s
+PersistentCacheBenchmark.mixedChronicleMap           1         LINES_1  thrpt         2158860.659          ops/s
+PersistentCacheBenchmark.mixedH2MVStore              1         LINES_1  thrpt            7665.748          ops/s
+PersistentCacheBenchmark.mixedLocalCache             1         LINES_1  thrpt             440.302          ops/s
+PersistentCacheBenchmark.mixedMapDB                  1         LINES_1  thrpt             519.512          ops/s
+PersistentCacheBenchmark.putChronicleMap             1         LINES_1  thrpt         2229715.964          ops/s
+PersistentCacheBenchmark.putH2MVStore                1         LINES_1  thrpt            8467.783          ops/s
+PersistentCacheBenchmark.putLocalCache               1         LINES_1  thrpt             443.181          ops/s
+PersistentCacheBenchmark.putMapDB                    1         LINES_1  thrpt             519.130          ops/s
 
-Benchmark result is saved to reports/20251101-174711Z/results.json
+Benchmark result is saved to reports/20251101-204234Z/results.json

@@ -1,0 +1,59 @@
+{
+  "run": {
+    "id": "20251101-214755Z",
+    "label": "2025-11-01 21:47:55 UTC",
+    "jmhArgs": "-wi 0 -i 1 -f 1 -p dataSize=100 -p valueProfileSpec=LINES_100",
+    "dataSize": 100,
+    "payload": {
+      "lines": 100,
+      "profile": "LINES_100"
+    },
+    "resultsPath": "reports/20251101-214755Z/results.json",
+    "logPath": "reports/20251101-214755Z/benchmark-output.log"
+  },
+  "metrics": {
+    "read": [
+      {
+        "suite": "CacheBenchmark",
+        "cache": "Caffeine",
+        "displayName": "Caffeine",
+        "location": "memory",
+        "operation": "read",
+        "throughput": 1056371.4954245926,
+        "unit": "ops/s",
+        "latencyMs": 0.0009466366750061398
+      },
+      {
+        "suite": "CacheBenchmark",
+        "cache": "Guava",
+        "displayName": "Guava",
+        "location": "memory",
+        "operation": "read",
+        "throughput": 253050.74473988888,
+        "unit": "ops/s",
+        "latencyMs": 0.003951776553860377
+      },
+      {
+        "suite": "CacheBenchmark",
+        "cache": "MapDB",
+        "displayName": "MapDB",
+        "location": "disk",
+        "operation": "read",
+        "throughput": 2572.152342051372,
+        "unit": "ops/s",
+        "latencyMs": 0.38877946055188495
+      },
+      {
+        "suite": "CacheBenchmark",
+        "cache": "LocalCache",
+        "displayName": "LocalCache",
+        "location": "disk",
+        "operation": "read",
+        "throughput": 521.1673373250834,
+        "unit": "ops/s",
+        "latencyMs": 1.9187695167785235
+      }
+    ],
+    "write": []
+  }
+}

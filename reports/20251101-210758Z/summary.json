@@ -1,0 +1,100 @@
+{
+  "run": {
+    "id": "20251101-210758Z",
+    "label": "2025-11-01 21:07:58 UTC",
+    "jmhArgs": "-wi 0 -i 1 -f 1 -p dataSize=100 -p valueProfile=LINES_100",
+    "dataSize": 100,
+    "payload": {
+      "lines": 100,
+      "profile": "LINES_100"
+    },
+    "resultsPath": "reports/20251101-210758Z/results.json",
+    "logPath": "reports/20251101-210758Z/benchmark-output.log"
+  },
+  "metrics": {
+    "read": [
+      {
+        "suite": "CacheBenchmark",
+        "cache": "Caffeine",
+        "displayName": "Caffeine",
+        "location": "memory",
+        "operation": "read",
+        "throughput": 944101.8689300847,
+        "unit": "ops/s",
+        "latencyMs": 0.001059207732671118
+      },
+      {
+        "suite": "CacheBenchmark",
+        "cache": "Guava",
+        "displayName": "Guava",
+        "location": "memory",
+        "operation": "read",
+        "throughput": 338431.0091018705,
+        "unit": "ops/s",
+        "latencyMs": 0.0029548119797113263
+      },
+      {
+        "suite": "CacheBenchmark",
+        "cache": "MapDB",
+        "displayName": "MapDB",
+        "location": "disk",
+        "operation": "read",
+        "throughput": 2536.206125635275,
+        "unit": "ops/s",
+        "latencyMs": 0.3942897187623177
+      },
+      {
+        "suite": "CacheBenchmark",
+        "cache": "LocalCache",
+        "displayName": "LocalCache",
+        "location": "disk",
+        "operation": "read",
+        "throughput": 510.0923410872497,
+        "unit": "ops/s",
+        "latencyMs": 1.9604293565132223
+      }
+    ],
+    "write": [
+      {
+        "suite": "CacheBenchmark",
+        "cache": "Caffeine",
+        "displayName": "Caffeine",
+        "location": "memory",
+        "operation": "write",
+        "throughput": 395113.5363528103,
+        "unit": "ops/s",
+        "latencyMs": 0.002530918098202199
+      },
+      {
+        "suite": "CacheBenchmark",
+        "cache": "Guava",
+        "displayName": "Guava",
+        "location": "memory",
+        "operation": "write",
+        "throughput": 296387.83144566236,
+        "unit": "ops/s",
+        "latencyMs": 0.0033739576794445184
+      },
+      {
+        "suite": "CacheBenchmark",
+        "cache": "MapDB",
+        "displayName": "MapDB",
+        "location": "disk",
+        "operation": "write",
+        "throughput": 297.4344371218941,
+        "unit": "ops/s",
+        "latencyMs": 3.362085472268907
+      },
+      {
+        "suite": "CacheBenchmark",
+        "cache": "LocalCache",
+        "displayName": "LocalCache",
+        "location": "disk",
+        "operation": "write",
+        "throughput": 4.410617020092381,
+        "unit": "ops/s",
+        "latencyMs": 226.72564755555558
+      }
+    ]
+  }
+}

@@ -1,0 +1,309 @@
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.getCaffeine
+# Parameters: (dataSize = 100, valueProfileSpec = LINES_10000)
+
+# Run progress: 0.00% complete, ETA 00:00:24
+# Fork: 1 of 1
+Iteration   1: 954947.375 ops/s
+
+
+Result "com.benchmark.cache.CacheBenchmark.getCaffeine":
+  954947.375 ops/s
+
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.getGuava
+# Parameters: (dataSize = 100, valueProfileSpec = LINES_10000)
+
+# Run progress: 8.33% complete, ETA 00:00:32
+# Fork: 1 of 1
+Iteration   1: 265071.664 ops/s
+
+
+Result "com.benchmark.cache.CacheBenchmark.getGuava":
+  265071.664 ops/s
+
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.getLocalCache
+# Parameters: (dataSize = 100, valueProfileSpec = LINES_10000)
+
+# Run progress: 16.67% complete, ETA 00:00:29
+# Fork: 1 of 1
+Iteration   1: 52.621 ops/s
+
+
+Result "com.benchmark.cache.CacheBenchmark.getLocalCache":
+  52.621 ops/s
+
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.getMapDB
+# Parameters: (dataSize = 100, valueProfileSpec = LINES_10000)
+
+# Run progress: 25.00% complete, ETA 00:00:26
+# Fork: 1 of 1
+Iteration   1: 17.836 ops/s
+
+
+Result "com.benchmark.cache.CacheBenchmark.getMapDB":
+  17.836 ops/s
+
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.mixedCaffeine
+# Parameters: (dataSize = 100, valueProfileSpec = LINES_10000)
+
+# Run progress: 33.33% complete, ETA 00:00:23
+# Fork: 1 of 1
+Error: Could not find or load main class org.openjdk.jmh.runner.ForkedMain
+Caused by: java.lang.ClassNotFoundException: org.openjdk.jmh.runner.ForkedMain
+<forked VM failed with exit code 1>
+<stdout last='20 lines'>
+</stdout>
+<stderr last='20 lines'>
+Error: Could not find or load main class org.openjdk.jmh.runner.ForkedMain
+Caused by: java.lang.ClassNotFoundException: org.openjdk.jmh.runner.ForkedMain
+</stderr>
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.mixedGuava
+# Parameters: (dataSize = 100, valueProfileSpec = LINES_10000)
+
+# Run progress: 33.33% complete, ETA 00:00:23
+# Fork: 1 of 1
+Error: Could not find or load main class org.openjdk.jmh.runner.ForkedMain
+Caused by: java.lang.ClassNotFoundException: org.openjdk.jmh.runner.ForkedMain
+<forked VM failed with exit code 1>
+<stdout last='20 lines'>
+</stdout>
+<stderr last='20 lines'>
+Error: Could not find or load main class org.openjdk.jmh.runner.ForkedMain
+Caused by: java.lang.ClassNotFoundException: org.openjdk.jmh.runner.ForkedMain
+</stderr>
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.mixedLocalCache
+# Parameters: (dataSize = 100, valueProfileSpec = LINES_10000)
+
+# Run progress: 33.33% complete, ETA 00:00:23
+# Fork: 1 of 1
+Error: Could not find or load main class org.openjdk.jmh.runner.ForkedMain
+Caused by: java.lang.ClassNotFoundException: org.openjdk.jmh.runner.ForkedMain
+<forked VM failed with exit code 1>
+<stdout last='20 lines'>
+</stdout>
+<stderr last='20 lines'>
+Error: Could not find or load main class org.openjdk.jmh.runner.ForkedMain
+Caused by: java.lang.ClassNotFoundException: org.openjdk.jmh.runner.ForkedMain
+</stderr>
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.mixedMapDB
+# Parameters: (dataSize = 100, valueProfileSpec = LINES_10000)
+
+# Run progress: 33.33% complete, ETA 00:00:23
+# Fork: 1 of 1
+Error: Could not find or load main class org.openjdk.jmh.runner.ForkedMain
+Caused by: java.lang.ClassNotFoundException: org.openjdk.jmh.runner.ForkedMain
+<forked VM failed with exit code 1>
+<stdout last='20 lines'>
+</stdout>
+<stderr last='20 lines'>
+Error: Could not find or load main class org.openjdk.jmh.runner.ForkedMain
+Caused by: java.lang.ClassNotFoundException: org.openjdk.jmh.runner.ForkedMain
+</stderr>
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.putCaffeine
+# Parameters: (dataSize = 100, valueProfileSpec = LINES_10000)
+
+# Run progress: 33.33% complete, ETA 00:00:23
+# Fork: 1 of 1
+Error: Could not find or load main class org.openjdk.jmh.runner.ForkedMain
+Caused by: java.lang.ClassNotFoundException: org.openjdk.jmh.runner.ForkedMain
+<forked VM failed with exit code 1>
+<stdout last='20 lines'>
+</stdout>
+<stderr last='20 lines'>
+Error: Could not find or load main class org.openjdk.jmh.runner.ForkedMain
+Caused by: java.lang.ClassNotFoundException: org.openjdk.jmh.runner.ForkedMain
+</stderr>
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.putGuava
+# Parameters: (dataSize = 100, valueProfileSpec = LINES_10000)
+
+# Run progress: 33.33% complete, ETA 00:00:23
+# Fork: 1 of 1
+Error: Could not find or load main class org.openjdk.jmh.runner.ForkedMain
+Caused by: java.lang.ClassNotFoundException: org.openjdk.jmh.runner.ForkedMain
+<forked VM failed with exit code 1>
+<stdout last='20 lines'>
+</stdout>
+<stderr last='20 lines'>
+Error: Could not find or load main class org.openjdk.jmh.runner.ForkedMain
+Caused by: java.lang.ClassNotFoundException: org.openjdk.jmh.runner.ForkedMain
+</stderr>
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.putLocalCache
+# Parameters: (dataSize = 100, valueProfileSpec = LINES_10000)
+
+# Run progress: 33.33% complete, ETA 00:00:23
+# Fork: 1 of 1
+Error: Could not find or load main class org.openjdk.jmh.runner.ForkedMain
+Caused by: java.lang.ClassNotFoundException: org.openjdk.jmh.runner.ForkedMain
+<forked VM failed with exit code 1>
+<stdout last='20 lines'>
+</stdout>
+<stderr last='20 lines'>
+Error: Could not find or load main class org.openjdk.jmh.runner.ForkedMain
+Caused by: java.lang.ClassNotFoundException: org.openjdk.jmh.runner.ForkedMain
+</stderr>
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.putMapDB
+# Parameters: (dataSize = 100, valueProfileSpec = LINES_10000)
+
+# Run progress: 33.33% complete, ETA 00:00:23
+# Fork: 1 of 1
+Error: Could not find or load main class org.openjdk.jmh.runner.ForkedMain
+Caused by: java.lang.ClassNotFoundException: org.openjdk.jmh.runner.ForkedMain
+<forked VM failed with exit code 1>
+<stdout last='20 lines'>
+</stdout>
+<stderr last='20 lines'>
+Error: Could not find or load main class org.openjdk.jmh.runner.ForkedMain
+Caused by: java.lang.ClassNotFoundException: org.openjdk.jmh.runner.ForkedMain
+</stderr>
+
+# Run complete. Total time: 00:00:11
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+NOTE: Current JVM experimentally supports Compiler Blackholes, and they are in use. Please exercise
+extra caution when trusting the results, look into the generated code to check the benchmark still
+works, and factor in a small probability of new VM bugs. Additionally, while comparisons between
+different JVMs are already problematic, the performance difference caused by different Blackhole
+modes can be very significant. Please make sure you use the consistent Blackhole mode for comparisons.
+
+Benchmark                     (dataSize)  (valueProfileSpec)   Mode  Cnt       Score   Error  Units
+CacheBenchmark.getCaffeine           100         LINES_10000  thrpt       954947.375          ops/s
+CacheBenchmark.getGuava              100         LINES_10000  thrpt       265071.664          ops/s
+CacheBenchmark.getLocalCache         100         LINES_10000  thrpt           52.621          ops/s
+CacheBenchmark.getMapDB              100         LINES_10000  thrpt           17.836          ops/s
+
+Benchmark result is saved to reports/20251101-214741Z/results.json

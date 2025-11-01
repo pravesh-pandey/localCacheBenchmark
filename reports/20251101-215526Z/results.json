@@ -1,0 +1,712 @@
+[
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.benchmark.cache.CacheBenchmark.getCaffeine",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-17-openjdk-amd64/bin/java",
+        "jvmArgs" : [
+            "--add-opens=java.base/java.lang=ALL-UNNAMED",
+            "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED",
+            "--add-opens=java.base/java.io=ALL-UNNAMED",
+            "--add-opens=java.base/java.nio=ALL-UNNAMED",
+            "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED",
+            "--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED",
+            "--add-exports=java.base/sun.nio.ch=ALL-UNNAMED",
+            "--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED"
+        ],
+        "jdkVersion" : "17.0.16",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.16+8-Debian-1deb12u1",
+        "warmupIterations" : 0,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "dataSize" : "1000",
+            "valueProfileSpec" : "LINES_10000"
+        },
+        "primaryMetric" : {
+            "score" : 58571.01022420713,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 58571.01022420713,
+                "50.0" : 58571.01022420713,
+                "90.0" : 58571.01022420713,
+                "95.0" : 58571.01022420713,
+                "99.0" : 58571.01022420713,
+                "99.9" : 58571.01022420713,
+                "99.99" : 58571.01022420713,
+                "99.999" : 58571.01022420713,
+                "99.9999" : 58571.01022420713,
+                "100.0" : 58571.01022420713
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    58571.01022420713
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.benchmark.cache.CacheBenchmark.getGuava",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-17-openjdk-amd64/bin/java",
+        "jvmArgs" : [
+            "--add-opens=java.base/java.lang=ALL-UNNAMED",
+            "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED",
+            "--add-opens=java.base/java.io=ALL-UNNAMED",
+            "--add-opens=java.base/java.nio=ALL-UNNAMED",
+            "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED",
+            "--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED",
+            "--add-exports=java.base/sun.nio.ch=ALL-UNNAMED",
+            "--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED"
+        ],
+        "jdkVersion" : "17.0.16",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.16+8-Debian-1deb12u1",
+        "warmupIterations" : 0,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "dataSize" : "1000",
+            "valueProfileSpec" : "LINES_10000"
+        },
+        "primaryMetric" : {
+            "score" : 22328.932079214075,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 22328.932079214075,
+                "50.0" : 22328.932079214075,
+                "90.0" : 22328.932079214075,
+                "95.0" : 22328.932079214075,
+                "99.0" : 22328.932079214075,
+                "99.9" : 22328.932079214075,
+                "99.99" : 22328.932079214075,
+                "99.999" : 22328.932079214075,
+                "99.9999" : 22328.932079214075,
+                "100.0" : 22328.932079214075
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    22328.932079214075
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.benchmark.cache.CacheBenchmark.getLocalCache",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-17-openjdk-amd64/bin/java",
+        "jvmArgs" : [
+            "--add-opens=java.base/java.lang=ALL-UNNAMED",
+            "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED",
+            "--add-opens=java.base/java.io=ALL-UNNAMED",
+            "--add-opens=java.base/java.nio=ALL-UNNAMED",
+            "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED",
+            "--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED",
+            "--add-exports=java.base/sun.nio.ch=ALL-UNNAMED",
+            "--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED"
+        ],
+        "jdkVersion" : "17.0.16",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.16+8-Debian-1deb12u1",
+        "warmupIterations" : 0,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "dataSize" : "1000",
+            "valueProfileSpec" : "LINES_10000"
+        },
+        "primaryMetric" : {
+            "score" : 4.188638907004352,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 4.188638907004352,
+                "50.0" : 4.188638907004352,
+                "90.0" : 4.188638907004352,
+                "95.0" : 4.188638907004352,
+                "99.0" : 4.188638907004352,
+                "99.9" : 4.188638907004352,
+                "99.99" : 4.188638907004352,
+                "99.999" : 4.188638907004352,
+                "99.9999" : 4.188638907004352,
+                "100.0" : 4.188638907004352
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    4.188638907004352
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.benchmark.cache.CacheBenchmark.getMapDB",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-17-openjdk-amd64/bin/java",
+        "jvmArgs" : [
+            "--add-opens=java.base/java.lang=ALL-UNNAMED",
+            "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED",
+            "--add-opens=java.base/java.io=ALL-UNNAMED",
+            "--add-opens=java.base/java.nio=ALL-UNNAMED",
+            "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED",
+            "--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED",
+            "--add-exports=java.base/sun.nio.ch=ALL-UNNAMED",
+            "--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED"
+        ],
+        "jdkVersion" : "17.0.16",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.16+8-Debian-1deb12u1",
+        "warmupIterations" : 0,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "dataSize" : "1000",
+            "valueProfileSpec" : "LINES_10000"
+        },
+        "primaryMetric" : {
+            "score" : 1.9488914282890064,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1.9488914282890064,
+                "50.0" : 1.9488914282890064,
+                "90.0" : 1.9488914282890064,
+                "95.0" : 1.9488914282890064,
+                "99.0" : 1.9488914282890064,
+                "99.9" : 1.9488914282890064,
+                "99.99" : 1.9488914282890064,
+                "99.999" : 1.9488914282890064,
+                "99.9999" : 1.9488914282890064,
+                "100.0" : 1.9488914282890064
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    1.9488914282890064
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.benchmark.cache.CacheBenchmark.mixedCaffeine",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-17-openjdk-amd64/bin/java",
+        "jvmArgs" : [
+            "--add-opens=java.base/java.lang=ALL-UNNAMED",
+            "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED",
+            "--add-opens=java.base/java.io=ALL-UNNAMED",
+            "--add-opens=java.base/java.nio=ALL-UNNAMED",
+            "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED",
+            "--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED",
+            "--add-exports=java.base/sun.nio.ch=ALL-UNNAMED",
+            "--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED"
+        ],
+        "jdkVersion" : "17.0.16",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.16+8-Debian-1deb12u1",
+        "warmupIterations" : 0,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "dataSize" : "1000",
+            "valueProfileSpec" : "LINES_10000"
+        },
+        "primaryMetric" : {
+            "score" : 50367.47230218662,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 50367.47230218662,
+                "50.0" : 50367.47230218662,
+                "90.0" : 50367.47230218662,
+                "95.0" : 50367.47230218662,
+                "99.0" : 50367.47230218662,
+                "99.9" : 50367.47230218662,
+                "99.99" : 50367.47230218662,
+                "99.999" : 50367.47230218662,
+                "99.9999" : 50367.47230218662,
+                "100.0" : 50367.47230218662
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    50367.47230218662
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.benchmark.cache.CacheBenchmark.mixedGuava",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-17-openjdk-amd64/bin/java",
+        "jvmArgs" : [
+            "--add-opens=java.base/java.lang=ALL-UNNAMED",
+            "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED",
+            "--add-opens=java.base/java.io=ALL-UNNAMED",
+            "--add-opens=java.base/java.nio=ALL-UNNAMED",
+            "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED",
+            "--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED",
+            "--add-exports=java.base/sun.nio.ch=ALL-UNNAMED",
+            "--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED"
+        ],
+        "jdkVersion" : "17.0.16",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.16+8-Debian-1deb12u1",
+        "warmupIterations" : 0,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "dataSize" : "1000",
+            "valueProfileSpec" : "LINES_10000"
+        },
+        "primaryMetric" : {
+            "score" : 21015.116256996185,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 21015.116256996185,
+                "50.0" : 21015.116256996185,
+                "90.0" : 21015.116256996185,
+                "95.0" : 21015.116256996185,
+                "99.0" : 21015.116256996185,
+                "99.9" : 21015.116256996185,
+                "99.99" : 21015.116256996185,
+                "99.999" : 21015.116256996185,
+                "99.9999" : 21015.116256996185,
+                "100.0" : 21015.116256996185
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    21015.116256996185
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.benchmark.cache.CacheBenchmark.mixedLocalCache",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-17-openjdk-amd64/bin/java",
+        "jvmArgs" : [
+            "--add-opens=java.base/java.lang=ALL-UNNAMED",
+            "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED",
+            "--add-opens=java.base/java.io=ALL-UNNAMED",
+            "--add-opens=java.base/java.nio=ALL-UNNAMED",
+            "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED",
+            "--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED",
+            "--add-exports=java.base/sun.nio.ch=ALL-UNNAMED",
+            "--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED"
+        ],
+        "jdkVersion" : "17.0.16",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.16+8-Debian-1deb12u1",
+        "warmupIterations" : 0,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "dataSize" : "1000",
+            "valueProfileSpec" : "LINES_10000"
+        },
+        "primaryMetric" : {
+            "score" : 1.4129674876407168,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1.4129674876407168,
+                "50.0" : 1.4129674876407168,
+                "90.0" : 1.4129674876407168,
+                "95.0" : 1.4129674876407168,
+                "99.0" : 1.4129674876407168,
+                "99.9" : 1.4129674876407168,
+                "99.99" : 1.4129674876407168,
+                "99.999" : 1.4129674876407168,
+                "99.9999" : 1.4129674876407168,
+                "100.0" : 1.4129674876407168
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    1.4129674876407168
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.benchmark.cache.CacheBenchmark.mixedMapDB",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-17-openjdk-amd64/bin/java",
+        "jvmArgs" : [
+            "--add-opens=java.base/java.lang=ALL-UNNAMED",
+            "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED",
+            "--add-opens=java.base/java.io=ALL-UNNAMED",
+            "--add-opens=java.base/java.nio=ALL-UNNAMED",
+            "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED",
+            "--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED",
+            "--add-exports=java.base/sun.nio.ch=ALL-UNNAMED",
+            "--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED"
+        ],
+        "jdkVersion" : "17.0.16",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.16+8-Debian-1deb12u1",
+        "warmupIterations" : 0,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "dataSize" : "1000",
+            "valueProfileSpec" : "LINES_10000"
+        },
+        "primaryMetric" : {
+            "score" : 0.913558807966615,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 0.913558807966615,
+                "50.0" : 0.913558807966615,
+                "90.0" : 0.913558807966615,
+                "95.0" : 0.913558807966615,
+                "99.0" : 0.913558807966615,
+                "99.9" : 0.913558807966615,
+                "99.99" : 0.913558807966615,
+                "99.999" : 0.913558807966615,
+                "99.9999" : 0.913558807966615,
+                "100.0" : 0.913558807966615
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    0.913558807966615
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.benchmark.cache.CacheBenchmark.putCaffeine",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-17-openjdk-amd64/bin/java",
+        "jvmArgs" : [
+            "--add-opens=java.base/java.lang=ALL-UNNAMED",
+            "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED",
+            "--add-opens=java.base/java.io=ALL-UNNAMED",
+            "--add-opens=java.base/java.nio=ALL-UNNAMED",
+            "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED",
+            "--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED",
+            "--add-exports=java.base/sun.nio.ch=ALL-UNNAMED",
+            "--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED"
+        ],
+        "jdkVersion" : "17.0.16",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.16+8-Debian-1deb12u1",
+        "warmupIterations" : 0,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "dataSize" : "1000",
+            "valueProfileSpec" : "LINES_10000"
+        },
+        "primaryMetric" : {
+            "score" : 33389.71200050767,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 33389.71200050767,
+                "50.0" : 33389.71200050767,
+                "90.0" : 33389.71200050767,
+                "95.0" : 33389.71200050767,
+                "99.0" : 33389.71200050767,
+                "99.9" : 33389.71200050767,
+                "99.99" : 33389.71200050767,
+                "99.999" : 33389.71200050767,
+                "99.9999" : 33389.71200050767,
+                "100.0" : 33389.71200050767
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    33389.71200050767
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.benchmark.cache.CacheBenchmark.putGuava",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-17-openjdk-amd64/bin/java",
+        "jvmArgs" : [
+            "--add-opens=java.base/java.lang=ALL-UNNAMED",
+            "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED",
+            "--add-opens=java.base/java.io=ALL-UNNAMED",
+            "--add-opens=java.base/java.nio=ALL-UNNAMED",
+            "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED",
+            "--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED",
+            "--add-exports=java.base/sun.nio.ch=ALL-UNNAMED",
+            "--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED"
+        ],
+        "jdkVersion" : "17.0.16",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.16+8-Debian-1deb12u1",
+        "warmupIterations" : 0,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "dataSize" : "1000",
+            "valueProfileSpec" : "LINES_10000"
+        },
+        "primaryMetric" : {
+            "score" : 21866.08840096172,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 21866.08840096172,
+                "50.0" : 21866.08840096172,
+                "90.0" : 21866.08840096172,
+                "95.0" : 21866.08840096172,
+                "99.0" : 21866.08840096172,
+                "99.9" : 21866.08840096172,
+                "99.99" : 21866.08840096172,
+                "99.999" : 21866.08840096172,
+                "99.9999" : 21866.08840096172,
+                "100.0" : 21866.08840096172
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    21866.08840096172
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.benchmark.cache.CacheBenchmark.putLocalCache",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-17-openjdk-amd64/bin/java",
+        "jvmArgs" : [
+            "--add-opens=java.base/java.lang=ALL-UNNAMED",
+            "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED",
+            "--add-opens=java.base/java.io=ALL-UNNAMED",
+            "--add-opens=java.base/java.nio=ALL-UNNAMED",
+            "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED",
+            "--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED",
+            "--add-exports=java.base/sun.nio.ch=ALL-UNNAMED",
+            "--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED"
+        ],
+        "jdkVersion" : "17.0.16",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.16+8-Debian-1deb12u1",
+        "warmupIterations" : 0,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "dataSize" : "1000",
+            "valueProfileSpec" : "LINES_10000"
+        },
+        "primaryMetric" : {
+            "score" : 0.3728407019760773,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 0.3728407019760773,
+                "50.0" : 0.3728407019760773,
+                "90.0" : 0.3728407019760773,
+                "95.0" : 0.3728407019760773,
+                "99.0" : 0.3728407019760773,
+                "99.9" : 0.3728407019760773,
+                "99.99" : 0.3728407019760773,
+                "99.999" : 0.3728407019760773,
+                "99.9999" : 0.3728407019760773,
+                "100.0" : 0.3728407019760773
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    0.3728407019760773
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "com.benchmark.cache.CacheBenchmark.putMapDB",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-17-openjdk-amd64/bin/java",
+        "jvmArgs" : [
+            "--add-opens=java.base/java.lang=ALL-UNNAMED",
+            "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED",
+            "--add-opens=java.base/java.io=ALL-UNNAMED",
+            "--add-opens=java.base/java.nio=ALL-UNNAMED",
+            "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED",
+            "--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED",
+            "--add-exports=java.base/sun.nio.ch=ALL-UNNAMED",
+            "--add-exports=java.base/jdk.internal.misc=ALL-UNNAMED"
+        ],
+        "jdkVersion" : "17.0.16",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "17.0.16+8-Debian-1deb12u1",
+        "warmupIterations" : 0,
+        "warmupTime" : "1 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "dataSize" : "1000",
+            "valueProfileSpec" : "LINES_10000"
+        },
+        "primaryMetric" : {
+            "score" : 0.6831330650079105,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 0.6831330650079105,
+                "50.0" : 0.6831330650079105,
+                "90.0" : 0.6831330650079105,
+                "95.0" : 0.6831330650079105,
+                "99.0" : 0.6831330650079105,
+                "99.9" : 0.6831330650079105,
+                "99.99" : 0.6831330650079105,
+                "99.999" : 0.6831330650079105,
+                "99.9999" : 0.6831330650079105,
+                "100.0" : 0.6831330650079105
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    0.6831330650079105
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+]
+
+

@@ -1,0 +1,293 @@
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.getCaffeine
+# Parameters: (dataSize = 1000, valueProfileSpec = LINES_10000)
+
+# Run progress: 0.00% complete, ETA 00:00:24
+# Fork: 1 of 1
+Iteration   1: 58571.010 ops/s
+
+
+Result "com.benchmark.cache.CacheBenchmark.getCaffeine":
+  58571.010 ops/s
+
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.getGuava
+# Parameters: (dataSize = 1000, valueProfileSpec = LINES_10000)
+
+# Run progress: 8.33% complete, ETA 00:01:17
+# Fork: 1 of 1
+Iteration   1: 22328.932 ops/s
+
+
+Result "com.benchmark.cache.CacheBenchmark.getGuava":
+  22328.932 ops/s
+
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.getLocalCache
+# Parameters: (dataSize = 1000, valueProfileSpec = LINES_10000)
+
+# Run progress: 16.67% complete, ETA 00:01:09
+# Fork: 1 of 1
+Iteration   1: 4.189 ops/s
+
+
+Result "com.benchmark.cache.CacheBenchmark.getLocalCache":
+  4.189 ops/s
+
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.getMapDB
+# Parameters: (dataSize = 1000, valueProfileSpec = LINES_10000)
+
+# Run progress: 25.00% complete, ETA 00:01:02
+# Fork: 1 of 1
+Iteration   1: 1.949 ops/s
+
+
+Result "com.benchmark.cache.CacheBenchmark.getMapDB":
+  1.949 ops/s
+
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.mixedCaffeine
+# Parameters: (dataSize = 1000, valueProfileSpec = LINES_10000)
+
+# Run progress: 33.33% complete, ETA 00:00:55
+# Fork: 1 of 1
+Iteration   1: 50367.472 ops/s
+
+
+Result "com.benchmark.cache.CacheBenchmark.mixedCaffeine":
+  50367.472 ops/s
+
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.mixedGuava
+# Parameters: (dataSize = 1000, valueProfileSpec = LINES_10000)
+
+# Run progress: 41.67% complete, ETA 00:00:47
+# Fork: 1 of 1
+Iteration   1: 21015.116 ops/s
+
+
+Result "com.benchmark.cache.CacheBenchmark.mixedGuava":
+  21015.116 ops/s
+
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.mixedLocalCache
+# Parameters: (dataSize = 1000, valueProfileSpec = LINES_10000)
+
+# Run progress: 50.00% complete, ETA 00:00:40
+# Fork: 1 of 1
+Iteration   1: 1.413 ops/s
+
+
+Result "com.benchmark.cache.CacheBenchmark.mixedLocalCache":
+  1.413 ops/s
+
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.mixedMapDB
+# Parameters: (dataSize = 1000, valueProfileSpec = LINES_10000)
+
+# Run progress: 58.33% complete, ETA 00:00:34
+# Fork: 1 of 1
+Iteration   1: 0.914 ops/s
+
+
+Result "com.benchmark.cache.CacheBenchmark.mixedMapDB":
+  0.914 ops/s
+
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.putCaffeine
+# Parameters: (dataSize = 1000, valueProfileSpec = LINES_10000)
+
+# Run progress: 66.67% complete, ETA 00:00:27
+# Fork: 1 of 1
+Iteration   1: 33389.712 ops/s
+
+
+Result "com.benchmark.cache.CacheBenchmark.putCaffeine":
+  33389.712 ops/s
+
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.putGuava
+# Parameters: (dataSize = 1000, valueProfileSpec = LINES_10000)
+
+# Run progress: 75.00% complete, ETA 00:00:20
+# Fork: 1 of 1
+Iteration   1: 21866.088 ops/s
+
+
+Result "com.benchmark.cache.CacheBenchmark.putGuava":
+  21866.088 ops/s
+
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.putLocalCache
+# Parameters: (dataSize = 1000, valueProfileSpec = LINES_10000)
+
+# Run progress: 83.33% complete, ETA 00:00:13
+# Fork: 1 of 1
+Iteration   1: 0.373 ops/s
+
+
+Result "com.benchmark.cache.CacheBenchmark.putLocalCache":
+  0.373 ops/s
+
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.putMapDB
+# Parameters: (dataSize = 1000, valueProfileSpec = LINES_10000)
+
+# Run progress: 91.67% complete, ETA 00:00:06
+# Fork: 1 of 1
+Iteration   1: 0.683 ops/s
+
+
+Result "com.benchmark.cache.CacheBenchmark.putMapDB":
+  0.683 ops/s
+
+
+# Run complete. Total time: 00:01:24
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+NOTE: Current JVM experimentally supports Compiler Blackholes, and they are in use. Please exercise
+extra caution when trusting the results, look into the generated code to check the benchmark still
+works, and factor in a small probability of new VM bugs. Additionally, while comparisons between
+different JVMs are already problematic, the performance difference caused by different Blackhole
+modes can be very significant. Please make sure you use the consistent Blackhole mode for comparisons.
+
+Benchmark                       (dataSize)  (valueProfileSpec)   Mode  Cnt      Score   Error  Units
+CacheBenchmark.getCaffeine            1000         LINES_10000  thrpt       58571.010          ops/s
+CacheBenchmark.getGuava               1000         LINES_10000  thrpt       22328.932          ops/s
+CacheBenchmark.getLocalCache          1000         LINES_10000  thrpt           4.189          ops/s
+CacheBenchmark.getMapDB               1000         LINES_10000  thrpt           1.949          ops/s
+CacheBenchmark.mixedCaffeine          1000         LINES_10000  thrpt       50367.472          ops/s
+CacheBenchmark.mixedGuava             1000         LINES_10000  thrpt       21015.116          ops/s
+CacheBenchmark.mixedLocalCache        1000         LINES_10000  thrpt           1.413          ops/s
+CacheBenchmark.mixedMapDB             1000         LINES_10000  thrpt           0.914          ops/s
+CacheBenchmark.putCaffeine            1000         LINES_10000  thrpt       33389.712          ops/s
+CacheBenchmark.putGuava               1000         LINES_10000  thrpt       21866.088          ops/s
+CacheBenchmark.putLocalCache          1000         LINES_10000  thrpt           0.373          ops/s
+CacheBenchmark.putMapDB               1000         LINES_10000  thrpt           0.683          ops/s
+
+Benchmark result is saved to reports/20251101-215526Z/results.json

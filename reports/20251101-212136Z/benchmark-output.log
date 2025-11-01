@@ -1,0 +1,13 @@
+Benchmarks: 
+com.benchmark.cache.CacheBenchmark.getCaffeine
+com.benchmark.cache.CacheBenchmark.getGuava
+com.benchmark.cache.CacheBenchmark.getLocalCache
+com.benchmark.cache.CacheBenchmark.getMapDB
+com.benchmark.cache.CacheBenchmark.mixedCaffeine
+com.benchmark.cache.CacheBenchmark.mixedGuava
+com.benchmark.cache.CacheBenchmark.mixedLocalCache
+com.benchmark.cache.CacheBenchmark.mixedMapDB
+com.benchmark.cache.CacheBenchmark.putCaffeine
+com.benchmark.cache.CacheBenchmark.putGuava
+com.benchmark.cache.CacheBenchmark.putLocalCache
+com.benchmark.cache.CacheBenchmark.putMapDB

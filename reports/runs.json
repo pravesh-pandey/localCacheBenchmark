@@ -1,18 +1,174 @@
 [
   {
-    "id": "20251101-174711Z",
-    "label": "2025-11-01 17:47:11 UTC",
-    "resultsPath": "reports/20251101-174711Z/results.json",
-    "logPath": "reports/20251101-174711Z/benchmark-output.log",
+    "id": "20251101-215526Z",
+    "label": "2025-11-01 21:55:26 UTC",
+    "dataSize": 1000,
+    "payload": {
+      "lines": 10000,
+      "profile": "LINES_10000"
+    },
+    "summaryPath": "reports/20251101-215526Z/summary.json",
+    "resultsPath": "reports/20251101-215526Z/results.json",
+    "logPath": "reports/20251101-215526Z/benchmark-output.log",
+    "jmhArgs": "-wi 0 -i 1 -f 1 -p dataSize=1000 -p valueProfileSpec=LINES_10000"
+  },
+  {
+    "id": "20251101-215137Z",
+    "label": "2025-11-01 21:51:37 UTC",
+    "dataSize": 100,
+    "payload": {
+      "lines": 10000,
+      "profile": "LINES_10000"
+    },
+    "summaryPath": "reports/20251101-215137Z/summary.json",
+    "resultsPath": "reports/20251101-215137Z/results.json",
+    "logPath": "reports/20251101-215137Z/benchmark-output.log",
+    "jmhArgs": "-wi 0 -i 1 -f 1 -p dataSize=100 -p valueProfileSpec=LINES_10000"
+  },
+  {
+    "id": "20251101-215049Z",
+    "label": "2025-11-01 21:50:49 UTC",
+    "dataSize": 100,
+    "payload": {
+      "lines": 1000,
+      "profile": "LINES_1000"
+    },
+    "summaryPath": "reports/20251101-215049Z/summary.json",
+    "resultsPath": "reports/20251101-215049Z/results.json",
+    "logPath": "reports/20251101-215049Z/benchmark-output.log",
+    "jmhArgs": "-wi 0 -i 1 -f 1 -p dataSize=100 -p valueProfileSpec=LINES_1000"
+  },
+  {
+    "id": "20251101-214810Z",
+    "label": "2025-11-01 21:48:10 UTC",
+    "dataSize": 100,
+    "payload": {
+      "lines": 10,
+      "profile": "LINES_10"
+    },
+    "summaryPath": "reports/20251101-214810Z/summary.json",
+    "resultsPath": "reports/20251101-214810Z/results.json",
+    "logPath": "reports/20251101-214810Z/benchmark-output.log",
+    "jmhArgs": "-wi 0 -i 1 -f 1 -p dataSize=100 -p valueProfileSpec=LINES_10"
+  },
+  {
+    "id": "20251101-214755Z",
+    "label": "2025-11-01 21:47:55 UTC",
+    "dataSize": 100,
+    "payload": {
+      "lines": 100,
+      "profile": "LINES_100"
+    },
+    "summaryPath": "reports/20251101-214755Z/summary.json",
+    "resultsPath": "reports/20251101-214755Z/results.json",
+    "logPath": "reports/20251101-214755Z/benchmark-output.log",
+    "jmhArgs": "-wi 0 -i 1 -f 1 -p dataSize=100 -p valueProfileSpec=LINES_100"
+  },
+  {
+    "id": "20251101-214741Z",
+    "label": "2025-11-01 21:47:41 UTC",
+    "dataSize": 100,
+    "payload": {
+      "lines": 10000,
+      "profile": "LINES_10000"
+    },
+    "summaryPath": "reports/20251101-214741Z/summary.json",
+    "resultsPath": "reports/20251101-214741Z/results.json",
+    "logPath": "reports/20251101-214741Z/benchmark-output.log",
+    "jmhArgs": "-wi 0 -i 1 -f 1 -p dataSize=100 -p valueProfileSpec=LINES_10000"
+  },
+  {
+    "id": "20251101-214731Z",
+    "label": "2025-11-01 21:47:31 UTC",
+    "dataSize": 100,
+    "payload": {
+      "lines": 1000,
+      "profile": "LINES_1000"
+    },
+    "summaryPath": "reports/20251101-214731Z/summary.json",
+    "resultsPath": "reports/20251101-214731Z/results.json",
+    "logPath": "reports/20251101-214731Z/benchmark-output.log",
+    "jmhArgs": "-wi 0 -i 1 -f 1 -p dataSize=100 -p valueProfileSpec=LINES_1000"
+  },
+  {
+    "id": "20251101-214338Z",
+    "label": "2025-11-01 21:43:38 UTC",
+    "dataSize": 100,
+    "payload": {
+      "lines": 1000,
+      "profile": "LINES_1000"
+    },
+    "summaryPath": "reports/20251101-214338Z/summary.json",
+    "resultsPath": "reports/20251101-214338Z/results.json",
+    "logPath": "reports/20251101-214338Z/benchmark-output.log",
+    "jmhArgs": "-wi 0 -i 1 -f 1 -p dataSize=100 -p valueProfileSpec=LINES_1000"
+  },
+  {
+    "id": "20251101-212136Z",
+    "label": "2025-11-01 21:21:36 UTC",
+    "dataSize": 100,
+    "payload": {
+      "lines": 10000,
+      "profile": "LINES_10000"
+    },
+    "summaryPath": "reports/20251101-212136Z/summary.json",
+    "resultsPath": "reports/20251101-212136Z/results.json",
+    "logPath": "reports/20251101-212136Z/benchmark-output.log",
+    "jmhArgs": "-l"
+  },
+  {
+    "id": "20251101-210758Z",
+    "label": "2025-11-01 21:07:58 UTC",
+    "dataSize": 100,
+    "payload": {
+      "lines": 100,
+      "profile": "LINES_100"
+    },
+    "summaryPath": "reports/20251101-210758Z/summary.json",
+    "resultsPath": "reports/20251101-210758Z/results.json",
+    "logPath": "reports/20251101-210758Z/benchmark-output.log",
+    "jmhArgs": "-wi 0 -i 1 -f 1 -p dataSize=100 -p valueProfile=LINES_100"
+  },
+  {
+    "id": "20251101-204953Z",
+    "label": "2025-11-01 20:49:53 UTC",
+    "dataSize": 100,
+    "payload": {
+      "lines": 10,
+      "profile": "LINES_10"
+    },
+    "summaryPath": "reports/20251101-204953Z/summary.json",
+    "resultsPath": "reports/20251101-204953Z/results.json",
+    "logPath": "reports/20251101-204953Z/benchmark-output.log",
+    "jmhArgs": "-wi 0 -i 1 -f 1 -p dataSize=100 -p valueProfile=LINES_10"
+  },
+  {
+    "id": "20251101-204234Z",
+    "label": "2025-11-01 20:42:34 UTC",
+    "dataSize": 1,
+    "payload": {
+      "lines": 1,
+      "profile": "LINES_1"
+    },
+    "summaryPath": "reports/20251101-204234Z/summary.json",
+    "resultsPath": "reports/20251101-204234Z/results.json",
+    "logPath": "reports/20251101-204234Z/benchmark-output.log",
+    "jmhArgs": "-wi 0 -i 1 -f 1 -p dataSize=1 -p valueProfile=LINES_1"
+  },
+  {
+    "id": "20251101-202753Z",
+    "label": "2025-11-01 20:27:53 UTC",
+    "resultsPath": "reports/20251101-202753Z/results.json",
+    "logPath": "reports/20251101-202753Z/benchmark-output.log",
     "benchmarkCount": 24,
     "measurementCount": 24,
     "dataSizes": [
-      "1000"
+      "1"
     ],
     "valueProfiles": [
-      "LINES_10"
+      "LINES_1"
     ],
-    "jmhArgs": "-wi 0 -i 1 -f 1 -p dataSize=1000 -p valueProfile=LINES_10",
+    "jmhArgs": "-wi 0 -i 1 -f 1 -p dataSize=1 -p valueProfile=LINES_1",
     "benchmarks": [
       "com.benchmark.cache.CacheBenchmark.getCaffeine",
       "com.benchmark.cache.CacheBenchmark.getGuava",
@@ -25,19 +181,87 @@
       "com.benchmark.cache.CacheBenchmark.putCaffeine",
       "com.benchmark.cache.CacheBenchmark.putGuava",
       "com.benchmark.cache.CacheBenchmark.putLocalCache",
-      "com.benchmark.cache.CacheBenchmark.putMapDB",
-      "com.benchmark.cache.PersistentCacheBenchmark.getChronicleMap",
-      "com.benchmark.cache.PersistentCacheBenchmark.getH2MVStore",
-      "com.benchmark.cache.PersistentCacheBenchmark.getLocalCache",
-      "com.benchmark.cache.PersistentCacheBenchmark.getMapDB",
-      "com.benchmark.cache.PersistentCacheBenchmark.mixedChronicleMap",
-      "com.benchmark.cache.PersistentCacheBenchmark.mixedH2MVStore",
-      "com.benchmark.cache.PersistentCacheBenchmark.mixedLocalCache",
-      "com.benchmark.cache.PersistentCacheBenchmark.mixedMapDB",
-      "com.benchmark.cache.PersistentCacheBenchmark.putChronicleMap",
-      "com.benchmark.cache.PersistentCacheBenchmark.putH2MVStore",
-      "com.benchmark.cache.PersistentCacheBenchmark.putLocalCache",
-      "com.benchmark.cache.PersistentCacheBenchmark.putMapDB"
+      "com.benchmark.cache.CacheBenchmark.putMapDB"
     ]
+  },
+  {
+    "id": "20251101-202500Z",
+    "label": "2025-11-01 20:25:00 UTC",
+    "resultsPath": "reports/20251101-202500Z/results.json",
+    "logPath": "reports/20251101-202500Z/benchmark-output.log",
+    "benchmarkCount": 24,
+    "measurementCount": 24,
+    "dataSizes": [
+      "100"
+    ],
+    "valueProfiles": [
+      "LINES_10"
+    ],
+    "jmhArgs": "-wi 0 -i 1 -f 1 -p dataSize=100 -p valueProfile=LINES_10",
+    "benchmarks": [
+      "com.benchmark.cache.CacheBenchmark.getCaffeine",
+      "com.benchmark.cache.CacheBenchmark.getGuava",
+      "com.benchmark.cache.CacheBenchmark.getLocalCache",
+      "com.benchmark.cache.CacheBenchmark.getMapDB",
+      "com.benchmark.cache.CacheBenchmark.mixedCaffeine",
+      "com.benchmark.cache.CacheBenchmark.mixedGuava",
+      "com.benchmark.cache.CacheBenchmark.mixedLocalCache",
+      "com.benchmark.cache.CacheBenchmark.mixedMapDB",
+      "com.benchmark.cache.CacheBenchmark.putCaffeine",
+      "com.benchmark.cache.CacheBenchmark.putGuava",
+      "com.benchmark.cache.CacheBenchmark.putLocalCache",
+      "com.benchmark.cache.CacheBenchmark.putMapDB"
+    ]
+  },
+  {
+    "id": "20251101-201704Z",
+    "label": "2025-11-01 20:17:04 UTC",
+    "resultsPath": "reports/20251101-201704Z/results.json",
+    "logPath": "reports/20251101-201704Z/benchmark-output.log",
+    "benchmarkCount": 24,
+    "measurementCount": 24,
+    "dataSizes": [
+      "1"
+    ],
+    "valueProfiles": [
+      "LINES_1"
+    ],
+    "jmhArgs": "-wi 0 -i 1 -f 1 -p dataSize=1 -p valueProfile=LINES_1",
+    "benchmarks": [
+      "com.benchmark.cache.CacheBenchmark.getCaffeine",
+      "com.benchmark.cache.CacheBenchmark.getGuava",
+      "com.benchmark.cache.CacheBenchmark.getLocalCache",
+      "com.benchmark.cache.CacheBenchmark.getMapDB",
+      "com.benchmark.cache.CacheBenchmark.mixedCaffeine",
+      "com.benchmark.cache.CacheBenchmark.mixedGuava",
+      "com.benchmark.cache.CacheBenchmark.mixedLocalCache",
+      "com.benchmark.cache.CacheBenchmark.mixedMapDB",
+      "com.benchmark.cache.CacheBenchmark.putCaffeine",
+      "com.benchmark.cache.CacheBenchmark.putGuava",
+      "com.benchmark.cache.CacheBenchmark.putLocalCache",
+      "com.benchmark.cache.CacheBenchmark.putMapDB"
+    ]
+  },
+  {
+    "id": "20251101-201444Z",
+    "label": "2025-11-01 20:14:44 UTC",
+    "resultsPath": "reports/20251101-201444Z/results.json",
+    "logPath": "reports/20251101-201444Z/benchmark-output.log",
+    "benchmarkCount": 0,
+    "measurementCount": 0,
+    "dataSizes": [],
+    "valueProfiles": [],
+    "jmhArgs": "-wi 0 -i 1 -f 1 -p dataSize=1 -p valueProfile=LINES_1"
+  },
+  {
+    "id": "20251101-200724Z",
+    "label": "2025-11-01 20:07:24 UTC",
+    "resultsPath": "reports/20251101-200724Z/results.json",
+    "logPath": "reports/20251101-200724Z/benchmark-output.log",
+    "benchmarkCount": 0,
+    "measurementCount": 0,
+    "dataSizes": [],
+    "valueProfiles": [],
+    "jmhArgs": "-wi 0 -i 1 -f 1 -p dataSize=1 -p valueProfile=LINES_1"
   }
 ]

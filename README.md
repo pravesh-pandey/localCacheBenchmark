@@ -1,57 +1,15 @@
 # Cache Library Benchmark
 
-This project benchmarks **LocalCache** against a range of Java caching and persistent-store libraries. It contains two complementary benchmark suites built with [JMH](https://openjdk.org/projects/code-tools/jmh/), plus automation that archives every run and generates a static dashboard (`index.html`) suitable for GitHub Pages.
+This project benchmarks **LocalCache** against a range of Java caching libraries. It ships with a [JMH](https://openjdk.org/projects/code-tools/jmh/) harness plus automation that archives every run and generates a static dashboard (`index.html`) suitable for GitHub Pages.
 
 ---
 
 ## At a Glance
 
-- **Benchmark suites**
-  - `CacheBenchmark`: LocalCache vs. in-memory caches (Caffeine, Guava) and MapDB for small/medium datasets.
-  - `PersistentCacheBenchmark`: LocalCache vs. disk-first stores (MapDB, Chronicle Map, H2 MVStore) for a fair persistence comparison.
+- **Benchmark suite**: `CacheBenchmark` exercises LocalCache alongside in-memory contenders (Caffeine, Guava) and MapDB across multiple dataset sizes and payload profiles.
 - **Parameter sweeps**: Every benchmark runs across `dataSize ∈ {1K, 10K, 100K}` and value payloads `{10 lines, 100 lines, 1000 lines, 1 KB}`.
-- **Automation**: `./run-and-publish.sh` builds, executes, archives the raw results under `reports/<timestamp>/`, updates `reports/runs.json`, and regenerates `index.html`.
+- **Automation**: `./benchmark.sh <dataSize> <payloadLines>` builds, executes, archives the raw results under `reports/<timestamp>/`, updates `reports/runs.json`, and regenerates `index.html`.
 - **Visualization**: Open `index.html` locally or host it on GitHub Pages to browse historic runs, filter by dataset/profile, and download the raw JMH JSON.
-
----
-
-## Why Two Benchmark Suites?
-
-| Suite | Libraries | Purpose |
-|-------|-----------|---------|
-| `CacheBenchmark` | LocalCache, Caffeine, Guava, MapDB | Highlights the trade-off between in-memory speed and LocalCache’s disk-backed durability. |
-| `PersistentCacheBenchmark` | LocalCache, MapDB, Chronicle Map, H2 MVStore | Fair “apples-to-apples” comparison among persistent stores that survive restarts. |
-
-### Key Takeaways from Recent Runs
-
-*(Open `index.html` for the complete dataset – values below are indicative for `dataSize=1K`, `valueProfile=LINES_10`)*  
-
-**Read Throughput (ops/s)**
-
-| Library | CacheBenchmark | PersistentCacheBenchmark |
-|---------|----------------|--------------------------|
-| LocalCache | 54 | 53 |
-| Caffeine | 52,503 | — |
-| Guava Cache | 35,884 | — |
-| MapDB | 1,677 | 1,943 |
-| Chronicle Map | — | 995 |
-| H2 MVStore | — | 20,637 |
-
-**Write Throughput (ops/s)**
-
-| Library | CacheBenchmark | PersistentCacheBenchmark |
-|---------|----------------|--------------------------|
-| LocalCache | 0.46 | 0.47 |
-| Caffeine | 36,214 | — |
-| Guava Cache | 29,155 | — |
-| MapDB | 283 | 276 |
-| Chronicle Map | — | 518 |
-| H2 MVStore | — | 1,081 |
-
-**Interpretation**
-- In-memory caches (Caffeine, Guava) are orders of magnitude faster but lose data on restart.
-- Among persistent stores, Chronicle Map and H2 MVStore generally outperform LocalCache; MapDB sits in between.
-- LocalCache optimises for filesystem transparency, TTL support, and Redis-like ergonomics rather than throughput.
 
 ---
 
@@ -90,18 +48,21 @@ Common JMH flags:
 ### Automated Pipeline (Recommended)
 
 ```bash
-# Optional: override JMH arguments (e.g. quick smoke run)
-export JMH_ARGS="-wi 0 -i 1 -f 1 -p dataSize=1000 -p valueProfile=LINES_10"
-
-./run-and-publish.sh
+./run-and-publish.sh <data_size> <value_profile>
 ```
+
+Required arguments:
+
+- `data_size`: `1`, `100`, `1000`, or `10000`
+- `value_profile`: `LINES_1`, `LINES_10`, `LINES_100`, or `LINES_1000`
 
 What the script does:
 1. Rebuilds the JAR (`mvn clean package`).
-2. Runs JMH with the supplied parameters, streaming the console log to `reports/<timestamp>/benchmark-output.log`.
-3. Saves the raw JSON to `reports/<timestamp>/results.json`.
-4. Updates `reports/runs.json` with metadata (label, parameters, counts).
-5. Regenerates `index.html` so the dashboard reflects the newest run.
+2. Executes the benchmarks with the supplied data size/profile (warmup 0, measurement 1, fork 1) unless `JMH_ARGS` is provided to override the entire command line.
+3. Streams the console log to `reports/<timestamp>/benchmark-output.log` and saves the raw JSON to `reports/<timestamp>/results.json`.
+4. Generates a per-operation summary table (`reports/<timestamp>/summary.md`).
+5. Updates `reports/runs.json` with metadata (label, parameters, counts).
+6. Regenerates `index.html` so the dashboard reflects the newest run.
 
 Each invocation creates a new timestamped folder, keeping historical data intact for publishing.
 
@@ -150,7 +111,7 @@ When comparing LocalCache against other solutions, consider the following:
 
 ## Extending the Benchmarks
 
-- Add new libraries by registering them in `CacheBenchmark` or `PersistentCacheBenchmark` and the Maven `pom.xml`.
+- Add new libraries by registering them in `CacheBenchmark` and the Maven `pom.xml`.
 - Introduce additional parameters (e.g. `threads`, `ttl`) via `@Param` annotations.
 - Track new metrics by parsing `results.json` or adding custom reporters.
 - Update `run-and-publish.sh` if you add extra artifacts (e.g. CSV exports) so they’re archived with each run.
@@ -162,7 +123,7 @@ When comparing LocalCache against other solutions, consider the following:
 ```
 ├── pom.xml                         # Maven configuration with dependencies + shade plugin
 ├── src/main/java/com/benchmark/... # Benchmark suites
-├── run-and-publish.sh              # Automation script (build, run, archive, regenerate dashboard)
+├── benchmark.sh                    # Automation script (build, run, archive, regenerate dashboard)
 ├── reports/
 │   ├── runs.json                   # Catalog of archived runs
 │   └── <timestamp>/
@@ -175,8 +136,8 @@ When comparing LocalCache against other solutions, consider the following:
 
 ## Contributing / Next Steps
 
-- Record fresh data using `./run-and-publish.sh` without `JMH_ARGS` to capture the full parameter matrix.
+- Record fresh data using `./benchmark.sh <dataSize> <payloadLines>` to capture the full parameter matrix.
 - Compare multiple runs via the dashboard filters or by uploading `results.json` files to the JMH Visualizer.
-- Extend the fair persistent comparison with additional metrics (memory usage, recovery time) if needed.
+- Extend the suite with additional caches or metrics (memory usage, recovery time) as needed.
 
 Happy benchmarking!

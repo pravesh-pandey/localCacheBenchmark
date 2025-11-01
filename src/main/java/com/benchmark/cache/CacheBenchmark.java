@@ -25,11 +25,11 @@ import java.util.concurrent.TimeUnit;
 @Fork(1)
 public class CacheBenchmark {
 
-    @Param({"1000", "10000", "100000"})
+    @Param({"1", "10", "100", "1000", "10000"})
     private int dataSize;
 
-    @Param({"LINES_10", "LINES_100", "LINES_1000", "BYTES_1024"})
-    private ValueProfile valueProfile;
+    @Param({"LINES_1", "LINES_10", "LINES_100", "LINES_1000"})
+    private String valueProfileSpec;
 
     private LocalCache localCache;
     private Cache<String, String> caffeineCache;
@@ -41,17 +41,18 @@ public class CacheBenchmark {
     private Path mapdbPath;
 
     private String[] keys;
-    private String[] values;
+    private ValueProfile valueProfile;
+    private ValueProfile.ValueGenerator valueGenerator;
 
     @Setup(Level.Trial)
     public void setup() throws IOException {
         // Prepare test data
         keys = new String[dataSize];
-        values = new String[dataSize];
         for (int i = 0; i < dataSize; i++) {
             keys[i] = "key_" + i;
-            values[i] = valueProfile.valueForIndex(i);
         }
+        valueProfile = ValueProfile.parse(valueProfileSpec);
+        valueGenerator = valueProfile.createGenerator(dataSize);
 
         // Setup LocalCache
         localCachePath = Files.createTempDirectory("localcache_bench");
@@ -81,10 +82,11 @@ public class CacheBenchmark {
 
         // Pre-populate caches for read benchmarks
         for (int i = 0; i < dataSize; i++) {
-            localCache.putString(keys[i], values[i]);
-            caffeineCache.put(keys[i], values[i]);
-            guavaCache.put(keys[i], values[i]);
-            mapdbCache.put(keys[i], values[i]);
+            String value = valueGenerator.valueAt(i);
+            localCache.putString(keys[i], value);
+            caffeineCache.put(keys[i], value);
+            guavaCache.put(keys[i], value);
+            mapdbCache.put(keys[i], value);
         }
         mapdb.commit();
     }
@@ -130,7 +132,7 @@ public class CacheBenchmark {
     @Benchmark
     public void putLocalCache(Blackhole bh) throws IOException {
         for (int i = 0; i < dataSize; i++) {
-            localCache.putString(keys[i], values[i]);
+            localCache.putString(keys[i], valueGenerator.valueAt(i));
         }
         bh.consume(localCache);
     }
@@ -138,7 +140,7 @@ public class CacheBenchmark {
     @Benchmark
     public void putCaffeine(Blackhole bh) {
         for (int i = 0; i < dataSize; i++) {
-            caffeineCache.put(keys[i], values[i]);
+            caffeineCache.put(keys[i], valueGenerator.valueAt(i));
         }
         bh.consume(caffeineCache);
     }
@@ -146,7 +148,7 @@ public class CacheBenchmark {
     @Benchmark
     public void putGuava(Blackhole bh) {
         for (int i = 0; i < dataSize; i++) {
-            guavaCache.put(keys[i], values[i]);
+            guavaCache.put(keys[i], valueGenerator.valueAt(i));
         }
         bh.consume(guavaCache);
     }
@@ -154,7 +156,7 @@ public class CacheBenchmark {
     @Benchmark
     public void putMapDB(Blackhole bh) {
         for (int i = 0; i < dataSize; i++) {
-            mapdbCache.put(keys[i], values[i]);
+            mapdbCache.put(keys[i], valueGenerator.valueAt(i));
         }
         mapdb.commit();
         bh.consume(mapdbCache);
@@ -196,7 +198,7 @@ public class CacheBenchmark {
     public void mixedLocalCache(Blackhole bh) throws IOException {
         for (int i = 0; i < dataSize; i++) {
             if (i % 5 == 0) {
-                localCache.putString(keys[i], values[i]);
+                localCache.putString(keys[i], valueGenerator.valueAt(i));
             } else {
                 bh.consume(localCache.getString(keys[i]).orElse(null));
             }
@@ -207,7 +209,7 @@ public class CacheBenchmark {
     public void mixedCaffeine(Blackhole bh) {
         for (int i = 0; i < dataSize; i++) {
             if (i % 5 == 0) {
-                caffeineCache.put(keys[i], values[i]);
+                caffeineCache.put(keys[i], valueGenerator.valueAt(i));
             } else {
                 bh.consume(caffeineCache.getIfPresent(keys[i]));
             }
@@ -218,7 +220,7 @@ public class CacheBenchmark {
     public void mixedGuava(Blackhole bh) {
         for (int i = 0; i < dataSize; i++) {
             if (i % 5 == 0) {
-                guavaCache.put(keys[i], values[i]);
+                guavaCache.put(keys[i], valueGenerator.valueAt(i));
             } else {
                 bh.consume(guavaCache.getIfPresent(keys[i]));
             }
@@ -229,7 +231,7 @@ public class CacheBenchmark {
     public void mixedMapDB(Blackhole bh) {
         for (int i = 0; i < dataSize; i++) {
             if (i % 5 == 0) {
-                mapdbCache.put(keys[i], values[i]);
+                mapdbCache.put(keys[i], valueGenerator.valueAt(i));
             } else {
                 bh.consume(mapdbCache.get(keys[i]));
             }

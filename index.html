@@ -3,427 +3,845 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cache Benchmark Dashboard</title>
+    <title>Cache Benchmarks</title>
     <style>
         :root {
-            color-scheme: light;
-            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            color-scheme: light dark;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         }
         body {
             margin: 0;
-            background: #f5f7fb;
-            color: #142033;
-        }
-        header {
-            background: linear-gradient(135deg, #2563eb, #1e3a8a);
-            color: white;
-            padding: 32px 20px;
-            box-shadow: 0 4px 16px rgba(30, 58, 138, 0.25);
-        }
-        header h1 {
-            margin: 0 0 8px;
-            font-size: 28px;
-        }
-        header p {
-            margin: 0;
-            font-size: 16px;
-            opacity: 0.85;
+            padding: 24px;
+            background: #f5f5f5;
+            color: #1f2933;
         }
         main {
-            margin: -24px auto 60px;
-            max-width: 1100px;
-            padding: 0 20px;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        h1 {
+            margin: 0 0 24px;
+            font-size: 28px;
         }
         section {
-            background: white;
-            padding: 24px;
-            border-radius: 16px;
-            box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
             margin-bottom: 24px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
         }
         h2 {
             margin: 0 0 16px;
             font-size: 20px;
-            color: #1f2937;
         }
-        .runs-list {
-            display: grid;
-            gap: 12px;
-        }
-        .runs-list select {
-            padding: 12px 14px;
-            border-radius: 10px;
-            border: 1px solid #cbd5f5;
-            font-size: 15px;
-            background: #f8faff;
-            color: #1f2937;
-        }
-        .run-summary p {
-            margin: 6px 0;
-            font-size: 15px;
-            color: #334155;
-        }
-        .controls {
+        .run-meta {
             display: flex;
+            gap: 24px;
             flex-wrap: wrap;
-            gap: 16px;
-            margin-top: 12px;
+            font-size: 15px;
         }
-        .control {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            min-width: 160px;
-        }
-        .control label {
+        .run-meta div {
             font-weight: 600;
-            color: #1f2937;
         }
-        .control select {
-            padding: 8px 12px;
+        .run-meta span {
+            font-weight: 400;
+            margin-left: 6px;
+        }
+        .run-selector {
+            margin-top: 18px;
+        }
+        .run-selector label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .run-selector select {
+            width: 100%;
+            padding: 10px 12px;
             border-radius: 8px;
-            border: 1px solid #d1d5db;
+            border: 1px solid #cbd5f5;
+            background: #f8fafc;
+            font-size: 15px;
+            color: #1f2933;
+            min-height: 140px;
+            overflow-y: auto;
+        }
+        .run-selector select:disabled {
+            background: #f1f5f9;
+            color: #94a3b8;
+            cursor: not-allowed;
+        }
+        .run-actions {
+            margin-top: 12px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .run-actions button {
+            padding: 10px 16px;
+            border-radius: 8px;
+            border: none;
+            background: #dc2626;
+            color: #ffffff;
             font-size: 14px;
-            background: #f9fafb;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.15s ease;
+        }
+        .run-actions button:hover {
+            background: #b91c1c;
+        }
+        .run-actions button:disabled {
+            background: #f87171;
+            cursor: not-allowed;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 16px;
         }
         th, td {
-            padding: 10px 12px;
+            padding: 12px 14px;
             text-align: left;
             border-bottom: 1px solid #e2e8f0;
+            font-size: 15px;
         }
         th {
-            background: #f8fafc;
-            color: #1e3a8a;
             font-size: 14px;
-            position: sticky;
-            top: 0;
-            z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #475569;
         }
         tbody tr:nth-child(odd) {
-            background: #fefeff;
+            background: #f8fafc;
         }
-        tbody tr:hover {
-            background: #eef2ff;
+        .empty {
+            text-align: center;
+            color: #64748b;
+            font-style: italic;
         }
-        .notice {
-            padding: 16px;
-            border-radius: 12px;
-            background: #eff6ff;
-            color: #1d4ed8;
-            border: 1px solid #bfdbfe;
-            margin-top: 20px;
-        }
-        .error {
-            color: #b91c1c;
-            font-weight: 600;
-        }
-        .links {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-top: 12px;
-        }
-        .links a {
-            text-decoration: none;
-            background: #2563eb;
-            color: white;
-            padding: 8px 14px;
-            border-radius: 8px;
+        .note {
+            margin: 8px 0 0;
             font-size: 14px;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+            color: #475569;
         }
-        .links a.secondary {
-            background: #64748b;
-            box-shadow: 0 4px 12px rgba(100, 116, 139, 0.2);
-        }
-        @media (max-width: 720px) {
-            header h1 {
-                font-size: 24px;
+        @media (max-width: 640px) {
+            body {
+                padding: 16px;
             }
             section {
-                padding: 18px;
-            }
-            .control {
-                min-width: 120px;
+                padding: 16px;
             }
             th, td {
-                font-size: 13px;
+                font-size: 14px;
+            }
+            .run-meta {
+                flex-direction: column;
+                gap: 8px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Cache Benchmark Dashboard</h1>
-        <p>Compare LocalCache against popular alternatives across datasets and payload profiles.</p>
-    </header>
-    <main>
-        <section>
-            <h2>Select Benchmark Run</h2>
-            <div class="runs-list">
-                <select id="run-select">
-                    <option value="">Loading runs...</option>
-                </select>
-                <div id="run-summary" class="run-summary"></div>
+<main>
+    <h1>Cache Benchmarks</h1>
+
+    <section>
+        <h2>Run Details</h2>
+        <div class="run-meta">
+            <div>Dataset size<span id="data-size">—</span></div>
+            <div>Payload<span id="payload">—</span></div>
+        </div>
+        <div class="run-selector">
+            <label for="run-select">Select dataset run</label>
+            <select id="run-select" size="6">
+                <option value="">Loading runs…</option>
+            </select>
+            <div class="run-actions">
+                <button id="delete-run-btn" type="button">Delete selected report</button>
             </div>
-        </section>
+        </div>
+        <p class="note" id="status-note"></p>
+    </section>
 
-        <section>
-            <h2>Interactive Results</h2>
-            <div class="controls">
-                <div class="control">
-                    <label for="data-size-filter">Data size</label>
-                    <select id="data-size-filter">
-                        <option value="">All</option>
-                    </select>
-                </div>
-                <div class="control">
-                    <label for="value-profile-filter">Value profile</label>
-                    <select id="value-profile-filter">
-                        <option value="">All</option>
-                    </select>
-                </div>
-                <div class="control">
-                    <label for="benchmark-filter">Benchmark</label>
-                    <select id="benchmark-filter">
-                        <option value="">All</option>
-                    </select>
-                </div>
-            </div>
+    <section>
+        <h2>Read Latency</h2>
+        <table id="read-table">
+            <thead>
+            <tr>
+                <th>Cache</th>
+                <th>Latency (ms/op)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><td class="empty" colspan="2">Loading…</td></tr>
+            </tbody>
+        </table>
+    </section>
 
-            <div class="notice" id="summary">Select a run to load measurements.</div>
+    <section>
+        <h2>Write Latency</h2>
+        <table id="write-table">
+            <thead>
+            <tr>
+                <th>Cache</th>
+                <th>Latency (ms/op)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><td class="empty" colspan="2">Loading…</td></tr>
+            </tbody>
+        </table>
+    </section>
+</main>
 
-            <table id="results-table">
-                <thead>
-                <tr>
-                    <th>Benchmark</th>
-                    <th>Data Size</th>
-                    <th>Value Profile</th>
-                    <th>Mode</th>
-                    <th>Score</th>
-                    <th>± Error</th>
-                    <th>Units</th>
-                </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        </section>
-
-        <section>
-            <h2>How to add new results</h2>
-            <p>Run <code>./run-and-publish.sh</code> locally to build the benchmarks, execute the suite, and append a new entry under <code>reports/</code>. Commit the generated folder, <code>reports/runs.json</code>, and this <code>index.html</code> to publish updates.</p>
-        </section>
-    </main>
-
-    <script>
-        const RUNS_URL = 'reports/runs.json';
-
-        const runSelect = document.getElementById('run-select');
-        const runSummary = document.getElementById('run-summary');
-        const summaryEl = document.getElementById('summary');
-        const tableBody = document.querySelector('#results-table tbody');
-        const dataSizeFilter = document.getElementById('data-size-filter');
-        const valueProfileFilter = document.getElementById('value-profile-filter');
-        const benchmarkFilter = document.getElementById('benchmark-filter');
-
-        let runs = [];
-        let currentRun = null;
-        let currentResults = [];
-        const resultsCache = new Map();
-
-        function setSummaryMessage(message, isError = false) {
-            summaryEl.classList.toggle('error', isError);
-            summaryEl.textContent = message;
+<script src="reports/latest-summary.js"></script>
+<script>
+(function () {
+    var RUNS_URL = 'reports/runs.json';
+    var CACHE_METADATA = {
+        CacheBenchmark: {
+            LocalCache: { name: 'LocalCache', location: 'disk' },
+            Caffeine: { name: 'Caffeine', location: 'memory' },
+            Guava: { name: 'Guava', location: 'memory' },
+            MapDB: { name: 'MapDB', location: 'disk' }
         }
+    };
+    var LOCATION_ICON = {
+        memory: '🧠',
+        disk: '💾',
+        unknown: '❓'
+    };
 
-        function populateOptions(select, values) {
-            select.innerHTML = '<option value=\"\">All</option>';
-            values.forEach(value => {
-                const option = document.createElement('option');
-                option.value = value;
-                option.textContent = value;
-                select.appendChild(option);
-            });
+    var dataSizeEl = document.getElementById('data-size');
+    var payloadEl = document.getElementById('payload');
+    var statusNote = document.getElementById('status-note');
+    var readTableBody = document.getElementById('read-table').querySelector('tbody');
+    var writeTableBody = document.getElementById('write-table').querySelector('tbody');
+    var runSelect = document.getElementById('run-select');
+    var deleteButton = document.getElementById('delete-run-btn');
+
+    var runs = [];
+    var latestSummary = typeof window !== 'undefined' ? window.__LATEST_BENCHMARK__ : null;
+    var currentSummary = null;
+    var currentRunId = null;
+    var hiddenRunIds = loadHiddenRunIds();
+
+    function setStatus(message) {
+        if (statusNote) {
+            statusNote.textContent = message || '';
         }
+    }
 
-        function formatNumber(value) {
-            return Number(value).toLocaleString(undefined, { maximumFractionDigits: 2 });
+    function camelToWords(value) {
+        if (value === null || value === undefined) {
+            return '';
         }
+        return String(value)
+            .replace(/([a-z0-9])([A-Z])/g, '$1 $2')
+            .replace(/_/g, ' ')
+            .trim();
+    }
 
-        function renderRunSummary(run, results) {
-            if (!run) {
-                runSummary.innerHTML = '';
-                return;
+    function iconForLocation(location) {
+        return LOCATION_ICON[location] || LOCATION_ICON.unknown;
+    }
+
+    function formatLatency(item) {
+        if (item && typeof item.latencyMs === 'number' && isFinite(item.latencyMs)) {
+            return item.latencyMs.toFixed(4) + ' ms';
+        }
+        if (item && typeof item.throughput === 'number' && item.throughput > 0 && item.unit && item.unit.slice(-5) === 'ops/s') {
+            var latency = 1000 / item.throughput;
+            return latency.toFixed(4) + ' ms';
+        }
+        return '—';
+    }
+
+    function renderTable(tbody, items) {
+        if (!tbody) {
+            return;
+        }
+        tbody.innerHTML = '';
+        if (!items || !items.length) {
+            var emptyRow = document.createElement('tr');
+            var emptyCell = document.createElement('td');
+            emptyCell.className = 'empty';
+            emptyCell.colSpan = 2;
+            emptyCell.textContent = 'No data available.';
+            emptyRow.appendChild(emptyCell);
+            tbody.appendChild(emptyRow);
+            return;
+        }
+        for (var i = 0; i < items.length; i += 1) {
+            var item = items[i];
+            var row = document.createElement('tr');
+            var cacheCell = document.createElement('td');
+            cacheCell.textContent = iconForLocation(item.location) + ' ' + (item.displayName || '');
+            var latencyCell = document.createElement('td');
+            latencyCell.textContent = formatLatency(item);
+            row.appendChild(cacheCell);
+            row.appendChild(latencyCell);
+            tbody.appendChild(row);
+        }
+    }
+
+    function extractOperation(method) {
+        if (!method) {
+            return null;
+        }
+        if (method.indexOf('get') === 0) {
+            return { operation: 'read', cache: method.slice(3) };
+        }
+        if (method.indexOf('put') === 0) {
+            return { operation: 'write', cache: method.slice(3) };
+        }
+        return null;
+    }
+
+    function buildSummaryFromResults(results, run) {
+        if (!results || !results.length) {
+            return null;
+        }
+        var read = [];
+        var write = [];
+        for (var i = 0; i < results.length; i += 1) {
+            var entry = results[i];
+            if (!entry || !entry.benchmark) {
+                continue;
             }
-
-            const dataSizes = [...new Set(results.map(entry => entry.params?.dataSize).filter(Boolean))];
-            const valueProfiles = [...new Set(results.map(entry => entry.params?.valueProfile).filter(Boolean))];
-            const benchmarks = [...new Set(results.map(entry => entry.benchmark))];
-
-            runSummary.innerHTML = `
-                <p><strong>Run:</strong> ${run.label}</p>
-                <p><strong>Measurements:</strong> ${results.length} rows across ${benchmarks.length} benchmarks</p>
-                <p><strong>Data sizes:</strong> ${dataSizes.join(', ') || 'n/a'}</p>
-                <p><strong>Value profiles:</strong> ${valueProfiles.join(', ') || 'n/a'}</p>
-                <div class="links">
-                    <a href="${run.resultsPath}" download>Download results.json</a>
-                    <a class="secondary" href="${run.logPath}" download>Download benchmark log</a>
-                </div>
-            `;
+            var parts = entry.benchmark.split('.');
+            if (parts.length < 2) {
+                continue;
+            }
+            var suite = parts[parts.length - 2];
+            if (suite !== 'CacheBenchmark') {
+                continue;
+            }
+            var method = parts[parts.length - 1];
+            var info = extractOperation(method);
+            if (!info || !info.cache) {
+                continue;
+            }
+            var metadataGroup = CACHE_METADATA[suite] || {};
+            var metadata = metadataGroup[info.cache] || {};
+            var primary = entry.primaryMetric || {};
+            var item = {
+                suite: suite,
+                cache: info.cache,
+                displayName: metadata.name || camelToWords(info.cache),
+                location: metadata.location || 'unknown',
+                throughput: typeof primary.score === 'number' ? primary.score : null,
+                unit: primary.scoreUnit || '',
+                operation: info.operation
+            };
+            if (typeof item.throughput === 'number' && item.throughput > 0 && item.unit && item.unit.slice(-5) === 'ops/s') {
+                item.latencyMs = 1000 / item.throughput;
+            }
+            if (info.operation === 'read') {
+                read.push(item);
+            } else if (info.operation === 'write') {
+                write.push(item);
+            }
         }
 
-        function renderTable() {
-            if (!currentResults.length) {
-                tableBody.innerHTML = '';
-                setSummaryMessage('Select a run to load measurements.');
-                return;
+        function sortByLatency(a, b) {
+            var latencyA = (a && typeof a.latencyMs === 'number' && isFinite(a.latencyMs)) ? a.latencyMs : Number.POSITIVE_INFINITY;
+            var latencyB = (b && typeof b.latencyMs === 'number' && isFinite(b.latencyMs)) ? b.latencyMs : Number.POSITIVE_INFINITY;
+            if (latencyA !== latencyB) {
+                return latencyA - latencyB;
             }
+            var nameA = a && a.displayName ? a.displayName : '';
+            var nameB = b && b.displayName ? b.displayName : '';
+            return nameA.localeCompare(nameB);
+        }
 
-            const size = dataSizeFilter.value;
-            const profile = valueProfileFilter.value;
-            const benchmark = benchmarkFilter.value;
+        read.sort(sortByLatency);
+        write.sort(sortByLatency);
 
-            const filtered = currentResults.filter(entry => {
-                if (size && entry.params?.dataSize !== size) return false;
-                if (profile && entry.params?.valueProfile !== profile) return false;
-                if (benchmark && entry.benchmark !== benchmark) return false;
-                return true;
-            });
-
-            tableBody.innerHTML = '';
-
-            if (!filtered.length) {
-                const row = document.createElement('tr');
-                const cell = document.createElement('td');
-                cell.colSpan = 7;
-                cell.textContent = 'No results match the selected filters.';
-                row.appendChild(cell);
-                tableBody.appendChild(row);
-                setSummaryMessage('No rows match the current filters.');
-                return;
+        var paramsSource = null;
+        for (var j = 0; j < results.length; j += 1) {
+            if (results[j] && results[j].params) {
+                paramsSource = results[j].params;
+                break;
             }
+        }
 
-            filtered.forEach(entry => {
-                const row = document.createElement('tr');
-                const cells = [
-                    entry.benchmark,
-                    entry.params?.dataSize ?? '—',
-                    entry.params?.valueProfile ?? '—',
-                    entry.mode,
-                    formatNumber(entry.primaryMetric.score),
-                    formatNumber(entry.primaryMetric.scoreError),
-                    entry.primaryMetric.scoreUnit
-                ];
-                cells.forEach(text => {
-                    const cell = document.createElement('td');
-                    cell.textContent = text;
-                    row.appendChild(cell);
+        var dataSize = null;
+        if (run && run.dataSize !== undefined && run.dataSize !== null) {
+            var parsedSize = Number(run.dataSize);
+            dataSize = isNaN(parsedSize) ? run.dataSize : parsedSize;
+        } else if (paramsSource && paramsSource.dataSize !== undefined) {
+            var parsedParamSize = Number(paramsSource.dataSize);
+            dataSize = isNaN(parsedParamSize) ? paramsSource.dataSize : parsedParamSize;
+        }
+
+        var profile = '';
+        if (run && run.payload && run.payload.profile) {
+            profile = run.payload.profile;
+        } else if (paramsSource) {
+            if (paramsSource.valueProfileSpec) {
+                profile = paramsSource.valueProfileSpec;
+            } else if (paramsSource.valueProfile) {
+                profile = paramsSource.valueProfile;
+            }
+        }
+
+        var payloadLines = null;
+        if (run && run.payload && run.payload.lines !== undefined && run.payload.lines !== null) {
+            payloadLines = run.payload.lines;
+        } else if (profile) {
+            var match = String(profile).match(/LINES_(\d+)/);
+            payloadLines = match ? Number(match[1]) : null;
+        }
+
+        return {
+            run: {
+                id: run && run.id ? run.id : '',
+                label: run && run.label ? run.label : '',
+                dataSize: dataSize,
+                payload: {
+                    lines: payloadLines,
+                    profile: profile
+                },
+                resultsPath: run && run.resultsPath ? run.resultsPath : ''
+            },
+            metrics: {
+                read: read,
+                write: write
+            }
+        };
+    }
+
+    function describeRun(run) {
+        if (!run) {
+            return 'Unknown run';
+        }
+        var label = run.label || run.id || 'Run';
+        var parts = [];
+        var size = null;
+        if (run.dataSize !== undefined && run.dataSize !== null) {
+            size = run.dataSize;
+        } else if (run.dataSizes && run.dataSizes.length) {
+            size = run.dataSizes.join(', ');
+        }
+        if (size !== null && size !== '') {
+            parts.push('size ' + size);
+        }
+        var payloadLines = null;
+        if (run.payload && run.payload.lines !== undefined && run.payload.lines !== null) {
+            payloadLines = run.payload.lines;
+        }
+        var payloadProfile = '';
+        if (run.payload && run.payload.profile) {
+            payloadProfile = run.payload.profile;
+        } else if (run.valueProfiles && run.valueProfiles.length) {
+            payloadProfile = run.valueProfiles[0];
+        }
+        if (payloadLines !== null && payloadLines !== undefined) {
+            var linesNumber = Number(payloadLines);
+            if (!isNaN(linesNumber)) {
+                parts.push(linesNumber + ' line' + (linesNumber === 1 ? '' : 's'));
+            } else {
+                parts.push(String(payloadLines) + ' lines');
+            }
+        } else if (payloadProfile) {
+            parts.push(camelToWords(payloadProfile));
+        }
+        if (parts.length) {
+            return label + ' (' + parts.join(', ') + ')';
+        }
+        return label;
+    }
+
+    function loadHiddenRunIds() {
+        if (typeof window === 'undefined' || !window.localStorage) {
+            return [];
+        }
+        try {
+            var raw = window.localStorage.getItem('hiddenRuns');
+            if (!raw) {
+                return [];
+            }
+            var parsed = JSON.parse(raw);
+            if (Array.isArray(parsed)) {
+                return parsed.filter(function (value) {
+                    return typeof value === 'string' && value.length > 0;
                 });
-                tableBody.appendChild(row);
-            });
-
-            const benchmarkCount = new Set(filtered.map(entry => entry.benchmark)).size;
-            setSummaryMessage(`${filtered.length} measurements across ${benchmarkCount} benchmarks.`);
+            }
+            return [];
+        } catch (error) {
+            console.warn('Unable to load hidden runs from storage', error);
+            return [];
         }
+    }
 
-        async function fetchRunResults(run) {
-            if (resultsCache.has(run.id)) {
-                return resultsCache.get(run.id);
+    function saveHiddenRunIds() {
+        if (typeof window === 'undefined' || !window.localStorage) {
+            return;
+        }
+        try {
+            window.localStorage.setItem('hiddenRuns', JSON.stringify(hiddenRunIds));
+        } catch (error) {
+            console.warn('Unable to persist hidden runs', error);
+        }
+    }
+
+    function isHidden(runId) {
+        if (!runId) {
+            return false;
+        }
+        return hiddenRunIds.indexOf(runId) !== -1;
+    }
+
+    function clearSummaryView() {
+        currentSummary = null;
+        currentRunId = null;
+        if (runSelect) {
+            runSelect.value = '';
+        }
+        if (dataSizeEl) {
+            dataSizeEl.textContent = ' —';
+        }
+        if (payloadEl) {
+            payloadEl.textContent = ' —';
+        }
+        setStatus('No benchmark selected.');
+        renderTable(readTableBody, []);
+        renderTable(writeTableBody, []);
+    }
+
+    function populateRunSelect(list) {
+        if (!runSelect) {
+            return;
+        }
+        runSelect.innerHTML = '';
+        var visibleRuns = Array.isArray(list)
+            ? list.filter(function (run) {
+                return run && run.id && !isHidden(run.id);
+            })
+            : [];
+        if (deleteButton) {
+            deleteButton.disabled = visibleRuns.length === 0;
+        }
+        if (!visibleRuns.length) {
+            var emptyOption = document.createElement('option');
+            emptyOption.value = '';
+            emptyOption.textContent = 'No runs available';
+            emptyOption.disabled = true;
+            emptyOption.selected = true;
+            runSelect.appendChild(emptyOption);
+            runSelect.disabled = true;
+            return;
+        }
+        runSelect.disabled = false;
+        var size = visibleRuns.length;
+        if (size < 3) {
+            size = 3;
+        } else if (size > 8) {
+            size = 8;
+        }
+        runSelect.size = size;
+        for (var i = 0; i < visibleRuns.length; i += 1) {
+            var run = visibleRuns[i];
+            if (!run || !run.id) {
+                continue;
             }
-            const response = await fetch(run.resultsPath);
-            if (!response.ok) {
-                throw new Error(`Unable to load ${run.resultsPath}`);
-            }
-            const data = await response.json();
-            data.sort((a, b) => {
-                const sizeA = Number(a.params?.dataSize ?? 0);
-                const sizeB = Number(b.params?.dataSize ?? 0);
-                if (sizeA === sizeB) {
-                    const profileA = a.params?.valueProfile ?? '';
-                    const profileB = b.params?.valueProfile ?? '';
-                    if (profileA === profileB) {
-                        return a.benchmark.localeCompare(b.benchmark);
+            var option = document.createElement('option');
+            option.value = run.id;
+            option.textContent = describeRun(run);
+            runSelect.appendChild(option);
+        }
+        if (currentRunId) {
+            runSelect.value = currentRunId;
+        }
+    }
+
+    function resolveRunSummary(run) {
+        if (!run) {
+            return Promise.reject(new Error('Run not found.'));
+        }
+        if (latestSummary && latestSummary.run && latestSummary.run.id && run.id === latestSummary.run.id) {
+            return Promise.resolve(latestSummary);
+        }
+        if (run.summaryPath) {
+            return fetch(run.summaryPath, { cache: 'no-cache' })
+                .then(function (response) {
+                    if (!response.ok) {
+                        throw new Error('Unable to fetch ' + run.summaryPath);
                     }
-                    return profileA.localeCompare(profileB);
-                }
-                return sizeA - sizeB;
-            });
-            resultsCache.set(run.id, data);
-            return data;
+                    return response.json();
+                });
+        }
+        if (run.resultsPath) {
+            return fetch(run.resultsPath, { cache: 'no-cache' })
+                .then(function (response) {
+                    if (!response.ok) {
+                        throw new Error('Unable to fetch ' + run.resultsPath);
+                    }
+                    return response.json();
+                })
+                .then(function (results) {
+                    return buildSummaryFromResults(results, run);
+                });
+        }
+        return Promise.reject(new Error('Run does not include summary or results paths.'));
+    }
+
+    function applySummary(summary) {
+        if (!summary || !summary.metrics) {
+            setStatus('No benchmark data available.');
+            renderTable(readTableBody, []);
+            renderTable(writeTableBody, []);
+            currentSummary = null;
+            currentRunId = null;
+            return;
+        }
+        if (summary.run && summary.run.id && isHidden(summary.run.id)) {
+            clearSummaryView();
+            return;
+        }
+        currentSummary = summary;
+        latestSummary = summary;
+        if (typeof window !== 'undefined') {
+            window.__LATEST_BENCHMARK__ = summary;
+        }
+        var runInfo = summary.run || {};
+        currentRunId = runInfo.id || null;
+        var payloadInfo = runInfo.payload || {};
+
+        var readMetrics = Array.isArray(summary.metrics.read)
+            ? summary.metrics.read.filter(function (item) { return item && item.suite === 'CacheBenchmark'; })
+            : [];
+        var writeMetrics = Array.isArray(summary.metrics.write)
+            ? summary.metrics.write.filter(function (item) { return item && item.suite === 'CacheBenchmark'; })
+            : [];
+
+        if (dataSizeEl) {
+            if (typeof runInfo.dataSize === 'number' && !isNaN(runInfo.dataSize)) {
+                dataSizeEl.textContent = ' ' + runInfo.dataSize;
+            } else if (runInfo.dataSize) {
+                dataSizeEl.textContent = ' ' + runInfo.dataSize;
+            } else {
+                dataSizeEl.textContent = ' —';
+            }
         }
 
-        async function handleRunChange() {
-            const runId = runSelect.value;
-            if (!runId) {
-                currentRun = null;
-                currentResults = [];
-                runSummary.innerHTML = '';
-                tableBody.innerHTML = '';
-                setSummaryMessage('Select a run to load measurements.');
-                return;
+        if (payloadEl) {
+            if (typeof payloadInfo.lines === 'number' && !isNaN(payloadInfo.lines)) {
+                payloadEl.textContent = ' ' + payloadInfo.lines + ' line' + (payloadInfo.lines === 1 ? '' : 's');
+            } else if (payloadInfo.lines && !isNaN(Number(payloadInfo.lines))) {
+                var numericLines = Number(payloadInfo.lines);
+                payloadEl.textContent = ' ' + numericLines + ' line' + (numericLines === 1 ? '' : 's');
+            } else if (payloadInfo.profile) {
+                payloadEl.textContent = ' ' + camelToWords(payloadInfo.profile);
+            } else {
+                payloadEl.textContent = ' —';
             }
-            currentRun = runs.find(run => run.id === runId);
-            if (!currentRun) {
-                setSummaryMessage('Selected run metadata not found.', true);
-                return;
+        }
+
+        setStatus(runInfo.label ? 'Run: ' + runInfo.label : '');
+        renderTable(readTableBody, readMetrics);
+        renderTable(writeTableBody, writeMetrics);
+
+        if (runSelect && currentRunId) {
+            runSelect.value = currentRunId;
+        }
+    }
+
+    function loadRunById(runId) {
+        if (!runId) {
+            return;
+        }
+        if (currentRunId && currentRunId === runId && currentSummary) {
+            applySummary(currentSummary);
+            return;
+        }
+        var selectedRun = null;
+        for (var i = 0; i < runs.length; i += 1) {
+            if (runs[i] && runs[i].id === runId) {
+                selectedRun = runs[i];
+                break;
             }
-            try {
-                setSummaryMessage('Loading results…');
-                const data = await fetchRunResults(currentRun);
-                currentResults = data;
-                renderRunSummary(currentRun, data);
-                populateOptions(dataSizeFilter, [...new Set(data.map(entry => entry.params?.dataSize).filter(Boolean))]);
-                populateOptions(valueProfileFilter, [...new Set(data.map(entry => entry.params?.valueProfile).filter(Boolean))]);
-                populateOptions(benchmarkFilter, [...new Set(data.map(entry => entry.benchmark).filter(Boolean))]);
-                renderTable();
-            } catch (error) {
+        }
+        if (!selectedRun) {
+            setStatus('Selected run not found.');
+            return;
+        }
+        resolveRunSummary(selectedRun)
+            .then(function (summary) {
+                if (!summary) {
+                    throw new Error('Empty summary for selected run.');
+                }
+                applySummary(summary);
+            })
+            .catch(function (error) {
                 console.error(error);
-                setSummaryMessage('Failed to load the selected run. Ensure the JSON files are published.', true);
-                runSummary.innerHTML = '';
-                tableBody.innerHTML = '';
-            }
-        }
+                setStatus('Unable to load selected run.');
+                renderTable(readTableBody, []);
+                renderTable(writeTableBody, []);
+            });
+    }
 
-        async function loadRuns() {
-            try {
-                const response = await fetch(RUNS_URL, { cache: 'no-cache' });
+    function loadRunCatalog() {
+        fetch(RUNS_URL, { cache: 'no-cache' })
+            .then(function (response) {
                 if (!response.ok) {
-                    throw new Error('Unable to fetch run catalog.');
+                    throw new Error('Unable to fetch ' + RUNS_URL);
                 }
-                const data = await response.json();
-                if (!Array.isArray(data) || !data.length) {
-                    throw new Error('No runs recorded yet.');
+                return response.json();
+            })
+            .then(function (data) {
+                if (!Array.isArray(data)) {
+                    data = [];
+                }
+                if (!data.length) {
+                runs = [];
+                populateRunSelect(runs);
+                if (!currentSummary) {
+                    setStatus('No benchmark runs recorded yet.');
+                    renderTable(readTableBody, []);
+                        renderTable(writeTableBody, []);
+                    }
+                    return;
                 }
                 runs = data;
-                runSelect.innerHTML = '';
-                data.forEach((run, index) => {
-                    const option = document.createElement('option');
-                    option.value = run.id;
-                    option.textContent = `${run.label} (${run.id})`;
-                    if (index === 0) {
-                        option.selected = true;
-                    }
-                    runSelect.appendChild(option);
+                populateRunSelect(runs);
+                var targetRunId = currentRunId;
+                if (targetRunId && isHidden(targetRunId)) {
+                    targetRunId = null;
+                }
+                var visibleRuns = runs.filter(function (item) {
+                    return item && item.id && !isHidden(item.id);
                 });
-                await handleRunChange();
-            } catch (error) {
+                if (!targetRunId && visibleRuns.length) {
+                    targetRunId = visibleRuns[0].id;
+                }
+                if (runSelect && targetRunId) {
+                    runSelect.value = targetRunId;
+                }
+                if (!currentSummary && targetRunId) {
+                    loadRunById(targetRunId);
+                }
+            })
+            .catch(function (error) {
                 console.error(error);
-                runSelect.innerHTML = '<option value=\"\">No runs available</option>';
-                setSummaryMessage('No results yet. Run ./run-and-publish.sh to generate the first report.', true);
-            }
+                if (runSelect) {
+                    runSelect.innerHTML = '';
+                    var option = document.createElement('option');
+                    option.value = '';
+                    option.textContent = 'Run catalog unavailable';
+                    option.disabled = true;
+                    option.selected = true;
+                    runSelect.appendChild(option);
+                    runSelect.disabled = true;
+                }
+                if (!currentSummary) {
+                    setStatus('Unable to load benchmark catalog. Open via a local server or run the benchmark script.');
+                    renderTable(readTableBody, []);
+                    renderTable(writeTableBody, []);
+                } else {
+                    setStatus('Run catalog unavailable; showing cached results.');
+                }
+            });
+    }
+
+    function loadFromPreload() {
+        if (latestSummary && latestSummary.run && isHidden(latestSummary.run.id)) {
+            latestSummary = null;
         }
+        if (latestSummary && latestSummary.metrics) {
+            applySummary(latestSummary);
+            return true;
+        }
+        return false;
+    }
 
-        runSelect.addEventListener('change', handleRunChange);
-        dataSizeFilter.addEventListener('change', renderTable);
-        valueProfileFilter.addEventListener('change', renderTable);
-        benchmarkFilter.addEventListener('change', renderTable);
+    if (runSelect) {
+        runSelect.addEventListener('change', function () {
+            var value = runSelect.value;
+            if (value) {
+                loadRunById(value);
+            }
+        });
+    }
 
-        loadRuns();
-    </script>
+    if (deleteButton) {
+        deleteButton.addEventListener('click', function () {
+            if (!runSelect || !runSelect.value) {
+                setStatus('Select a run before deleting.');
+                return;
+            }
+            var runId = runSelect.value;
+            var run = null;
+            for (var i = 0; i < runs.length; i += 1) {
+                if (runs[i] && runs[i].id === runId) {
+                    run = runs[i];
+                    break;
+                }
+            }
+            if (!run) {
+                setStatus('Selected run not found.');
+                return;
+            }
+            var confirmMsg = 'Remove "' + (run.label || run.id) + '" from this dashboard?';
+            if (!window.confirm(confirmMsg)) {
+                return;
+            }
+            if (!isHidden(runId)) {
+                hiddenRunIds.push(runId);
+                saveHiddenRunIds();
+            }
+            populateRunSelect(runs);
+
+            var visibleRuns = runs.filter(function (item) {
+                return item && item.id && !isHidden(item.id);
+            });
+
+            if (visibleRuns.length) {
+                var nextRunId = visibleRuns[0].id;
+                runSelect.value = nextRunId;
+                loadRunById(nextRunId);
+            } else {
+                clearSummaryView();
+                latestSummary = null;
+                if (typeof window !== 'undefined') {
+                    window.__LATEST_BENCHMARK__ = null;
+                }
+            }
+
+            var folderHint = '';
+            if (run.summaryPath) {
+                var segments = run.summaryPath.split('/');
+                segments.pop();
+                folderHint = segments.join('/');
+            } else if (run.resultsPath) {
+                var parts = run.resultsPath.split('/');
+                parts.pop();
+                folderHint = parts.join('/');
+            }
+
+            var manualMessage = 'Removed from the dashboard. ';
+            if (folderHint) {
+                manualMessage += 'Manual cleanup: delete "' + folderHint + '" and update reports/runs.json.';
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    var command = 'rm -rf ' + folderHint + '\n# Edit reports/runs.json to remove entry ' + run.id;
+                    navigator.clipboard.writeText(command).catch(function () {
+                        // ignore clipboard failures
+                    });
+                }
+            } else {
+                manualMessage += 'Edit reports/runs.json to remove entry ' + run.id + '.';
+            }
+            setStatus(manualMessage);
+        });
+    }
+
+    if (!loadFromPreload()) {
+        setStatus('Loading latest benchmark…');
+    }
+
+    loadRunCatalog();
+})();
+</script>
 </body>
 </html>
