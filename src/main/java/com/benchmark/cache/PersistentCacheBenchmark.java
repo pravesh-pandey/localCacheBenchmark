@@ -1,15 +1,16 @@
 package com.benchmark.cache;
 
-import com.github.benmanes.caffeine.cache.Caffeine;
-import com.github.benmanes.caffeine.cache.Cache;
-import com.google.common.cache.CacheBuilder;
 import com.localcache.LocalCache;
+import net.openhft.chronicle.map.ChronicleMap;
+import org.h2.mvstore.MVMap;
+import org.h2.mvstore.MVStore;
 import org.mapdb.DB;
 import org.mapdb.DBMaker;
 import org.mapdb.HTreeMap;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -17,13 +18,17 @@ import java.time.Duration;
 import java.util.Comparator;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Fair benchmark comparing PERSISTENT/DISK-BASED cache implementations.
+ * All libraries tested here support data persistence and survival across restarts.
+ */
 @State(Scope.Benchmark)
 @BenchmarkMode(Mode.Throughput)
 @OutputTimeUnit(TimeUnit.SECONDS)
 @Warmup(iterations = 2, time = 1)
 @Measurement(iterations = 3, time = 2)
 @Fork(1)
-public class CacheBenchmark {
+public class PersistentCacheBenchmark {
 
     @Param({"1000", "10000", "100000"})
     private int dataSize;
@@ -31,14 +36,21 @@ public class CacheBenchmark {
     @Param({"LINES_10", "LINES_100", "LINES_1000", "BYTES_1024"})
     private ValueProfile valueProfile;
 
+    // Persistent caches
     private LocalCache localCache;
-    private Cache<String, String> caffeineCache;
-    private com.google.common.cache.Cache<String, String> guavaCache;
     private HTreeMap<String, String> mapdbCache;
-    private DB mapdb;
+    private ChronicleMap<String, String> chronicleCache;
+    private MVMap<String, String> h2mvCache;
 
+    // Storage backends
+    private DB mapdb;
+    private MVStore h2mvStore;
+
+    // Paths
     private Path localCachePath;
     private Path mapdbPath;
+    private File chroniclePath;
+    private Path h2mvPath;
 
     private String[] keys;
     private String[] values;
@@ -53,7 +65,7 @@ public class CacheBenchmark {
             values[i] = valueProfile.valueForIndex(i);
         }
 
-        // Setup LocalCache
+        // Setup LocalCache (filesystem-backed)
         localCachePath = Files.createTempDirectory("localcache_bench");
         localCache = LocalCache.newBuilder(localCachePath)
                 .hashAlgorithm("SHA-256")
@@ -61,32 +73,40 @@ public class CacheBenchmark {
                 .cleanInterval(Duration.ofMinutes(10))
                 .build();
 
-        // Setup Caffeine
-        caffeineCache = Caffeine.newBuilder()
-                .maximumSize(dataSize * 2)
-                .build();
-
-        // Setup Guava
-        guavaCache = CacheBuilder.newBuilder()
-                .maximumSize(dataSize * 2)
-                .build();
-
-        // Setup MapDB
-        Path tempDir = Files.createTempDirectory("mapdb_bench");
-        mapdbPath = tempDir.resolve("cache.db");
+        // Setup MapDB (memory-mapped file)
+        Path mapdbDir = Files.createTempDirectory("mapdb_bench");
+        mapdbPath = mapdbDir.resolve("cache.db");
         mapdb = DBMaker.fileDB(mapdbPath.toFile())
                 .fileMmapEnable()
                 .make();
         mapdbCache = mapdb.hashMap("cache", org.mapdb.Serializer.STRING, org.mapdb.Serializer.STRING).createOrOpen();
 
+        // Setup Chronicle Map (off-heap persistent)
+        chroniclePath = Files.createTempFile("chronicle_bench", ".dat").toFile();
+        chronicleCache = ChronicleMap
+                .of(String.class, String.class)
+                .name("benchmark-cache")
+                .entries(dataSize)
+                .averageKeySize(10)
+                .averageValueSize(valueProfile.estimatedSize())
+                .createPersistedTo(chroniclePath);
+
+        // Setup H2 MVStore (embedded database storage)
+        h2mvPath = Files.createTempFile("h2mv_bench", ".db");
+        h2mvStore = new MVStore.Builder()
+                .fileName(h2mvPath.toString())
+                .open();
+        h2mvCache = h2mvStore.openMap("cache");
+
         // Pre-populate caches for read benchmarks
         for (int i = 0; i < dataSize; i++) {
             localCache.putString(keys[i], values[i]);
-            caffeineCache.put(keys[i], values[i]);
-            guavaCache.put(keys[i], values[i]);
             mapdbCache.put(keys[i], values[i]);
+            chronicleCache.put(keys[i], values[i]);
+            h2mvCache.put(keys[i], values[i]);
         }
         mapdb.commit();
+        h2mvStore.commit();
     }
 
     @TearDown(Level.Trial)
@@ -123,6 +143,22 @@ public class CacheBenchmark {
                         }
                     });
         }
+
+        // Cleanup Chronicle Map
+        if (chronicleCache != null) {
+            chronicleCache.close();
+        }
+        if (chroniclePath != null && chroniclePath.exists()) {
+            chroniclePath.delete();
+        }
+
+        // Cleanup H2 MVStore
+        if (h2mvStore != null) {
+            h2mvStore.close();
+        }
+        if (h2mvPath != null && Files.exists(h2mvPath)) {
+            Files.delete(h2mvPath);
+        }
     }
 
     // ========== WRITE BENCHMARKS ==========
@@ -136,28 +172,29 @@ public class CacheBenchmark {
     }
 
     @Benchmark
-    public void putCaffeine(Blackhole bh) {
-        for (int i = 0; i < dataSize; i++) {
-            caffeineCache.put(keys[i], values[i]);
-        }
-        bh.consume(caffeineCache);
-    }
-
-    @Benchmark
-    public void putGuava(Blackhole bh) {
-        for (int i = 0; i < dataSize; i++) {
-            guavaCache.put(keys[i], values[i]);
-        }
-        bh.consume(guavaCache);
-    }
-
-    @Benchmark
     public void putMapDB(Blackhole bh) {
         for (int i = 0; i < dataSize; i++) {
             mapdbCache.put(keys[i], values[i]);
         }
         mapdb.commit();
         bh.consume(mapdbCache);
+    }
+
+    @Benchmark
+    public void putChronicleMap(Blackhole bh) {
+        for (int i = 0; i < dataSize; i++) {
+            chronicleCache.put(keys[i], values[i]);
+        }
+        bh.consume(chronicleCache);
+    }
+
+    @Benchmark
+    public void putH2MVStore(Blackhole bh) {
+        for (int i = 0; i < dataSize; i++) {
+            h2mvCache.put(keys[i], values[i]);
+        }
+        h2mvStore.commit();
+        bh.consume(h2mvCache);
     }
 
     // ========== READ BENCHMARKS ==========
@@ -170,23 +207,23 @@ public class CacheBenchmark {
     }
 
     @Benchmark
-    public void getCaffeine(Blackhole bh) {
-        for (int i = 0; i < dataSize; i++) {
-            bh.consume(caffeineCache.getIfPresent(keys[i]));
-        }
-    }
-
-    @Benchmark
-    public void getGuava(Blackhole bh) {
-        for (int i = 0; i < dataSize; i++) {
-            bh.consume(guavaCache.getIfPresent(keys[i]));
-        }
-    }
-
-    @Benchmark
     public void getMapDB(Blackhole bh) {
         for (int i = 0; i < dataSize; i++) {
             bh.consume(mapdbCache.get(keys[i]));
+        }
+    }
+
+    @Benchmark
+    public void getChronicleMap(Blackhole bh) {
+        for (int i = 0; i < dataSize; i++) {
+            bh.consume(chronicleCache.get(keys[i]));
+        }
+    }
+
+    @Benchmark
+    public void getH2MVStore(Blackhole bh) {
+        for (int i = 0; i < dataSize; i++) {
+            bh.consume(h2mvCache.get(keys[i]));
         }
     }
 
@@ -204,28 +241,6 @@ public class CacheBenchmark {
     }
 
     @Benchmark
-    public void mixedCaffeine(Blackhole bh) {
-        for (int i = 0; i < dataSize; i++) {
-            if (i % 5 == 0) {
-                caffeineCache.put(keys[i], values[i]);
-            } else {
-                bh.consume(caffeineCache.getIfPresent(keys[i]));
-            }
-        }
-    }
-
-    @Benchmark
-    public void mixedGuava(Blackhole bh) {
-        for (int i = 0; i < dataSize; i++) {
-            if (i % 5 == 0) {
-                guavaCache.put(keys[i], values[i]);
-            } else {
-                bh.consume(guavaCache.getIfPresent(keys[i]));
-            }
-        }
-    }
-
-    @Benchmark
     public void mixedMapDB(Blackhole bh) {
         for (int i = 0; i < dataSize; i++) {
             if (i % 5 == 0) {
@@ -235,5 +250,28 @@ public class CacheBenchmark {
             }
         }
         mapdb.commit();
+    }
+
+    @Benchmark
+    public void mixedChronicleMap(Blackhole bh) {
+        for (int i = 0; i < dataSize; i++) {
+            if (i % 5 == 0) {
+                chronicleCache.put(keys[i], values[i]);
+            } else {
+                bh.consume(chronicleCache.get(keys[i]));
+            }
+        }
+    }
+
+    @Benchmark
+    public void mixedH2MVStore(Blackhole bh) {
+        for (int i = 0; i < dataSize; i++) {
+            if (i % 5 == 0) {
+                h2mvCache.put(keys[i], values[i]);
+            } else {
+                bh.consume(h2mvCache.get(keys[i]));
+            }
+        }
+        h2mvStore.commit();
     }
 }

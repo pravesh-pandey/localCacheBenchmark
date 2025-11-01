@@ -1,0 +1,43 @@
+[
+  {
+    "id": "20251101-174711Z",
+    "label": "2025-11-01 17:47:11 UTC",
+    "resultsPath": "reports/20251101-174711Z/results.json",
+    "logPath": "reports/20251101-174711Z/benchmark-output.log",
+    "benchmarkCount": 24,
+    "measurementCount": 24,
+    "dataSizes": [
+      "1000"
+    ],
+    "valueProfiles": [
+      "LINES_10"
+    ],
+    "jmhArgs": "-wi 0 -i 1 -f 1 -p dataSize=1000 -p valueProfile=LINES_10",
+    "benchmarks": [
+      "com.benchmark.cache.CacheBenchmark.getCaffeine",
+      "com.benchmark.cache.CacheBenchmark.getGuava",
+      "com.benchmark.cache.CacheBenchmark.getLocalCache",
+      "com.benchmark.cache.CacheBenchmark.getMapDB",
+      "com.benchmark.cache.CacheBenchmark.mixedCaffeine",
+      "com.benchmark.cache.CacheBenchmark.mixedGuava",
+      "com.benchmark.cache.CacheBenchmark.mixedLocalCache",
+      "com.benchmark.cache.CacheBenchmark.mixedMapDB",
+      "com.benchmark.cache.CacheBenchmark.putCaffeine",
+      "com.benchmark.cache.CacheBenchmark.putGuava",
+      "com.benchmark.cache.CacheBenchmark.putLocalCache",
+      "com.benchmark.cache.CacheBenchmark.putMapDB",
+      "com.benchmark.cache.PersistentCacheBenchmark.getChronicleMap",
+      "com.benchmark.cache.PersistentCacheBenchmark.getH2MVStore",
+      "com.benchmark.cache.PersistentCacheBenchmark.getLocalCache",
+      "com.benchmark.cache.PersistentCacheBenchmark.getMapDB",
+      "com.benchmark.cache.PersistentCacheBenchmark.mixedChronicleMap",
+      "com.benchmark.cache.PersistentCacheBenchmark.mixedH2MVStore",
+      "com.benchmark.cache.PersistentCacheBenchmark.mixedLocalCache",
+      "com.benchmark.cache.PersistentCacheBenchmark.mixedMapDB",
+      "com.benchmark.cache.PersistentCacheBenchmark.putChronicleMap",
+      "com.benchmark.cache.PersistentCacheBenchmark.putH2MVStore",
+      "com.benchmark.cache.PersistentCacheBenchmark.putLocalCache",
+      "com.benchmark.cache.PersistentCacheBenchmark.putMapDB"
+    ]
+  }
+]
