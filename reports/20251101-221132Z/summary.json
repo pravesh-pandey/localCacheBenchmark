@@ -1,0 +1,18 @@
+{
+  "run": {
+    "id": "20251101-221132Z",
+    "label": "2025-11-01 22:11:32 UTC",
+    "jmhArgs": "-wi 0 -i 1 -f 1 -p dataSize=100 -p valueProfileSpec=LINES_10000",
+    "dataSize": 100,
+    "payload": {
+      "lines": 10000,
+      "profile": "LINES_10000"
+    },
+    "resultsPath": "reports/20251101-221132Z/results.json",
+    "logPath": "reports/20251101-221132Z/benchmark-output.log"
+  },
+  "metrics": {
+    "read": [],
+    "write": []
+  }
+}

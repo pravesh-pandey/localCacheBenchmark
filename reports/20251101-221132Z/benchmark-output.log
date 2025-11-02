@@ -1,0 +1,485 @@
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.getCaffeine
+# Parameters: (dataSize = 100, valueProfileSpec = LINES_10000)
+
+# Run progress: 0.00% complete, ETA 00:00:24
+# Fork: 1 of 1
+Iteration   1: <failure>
+
+java.lang.NullPointerException: interval
+	at java.base/java.util.Objects.requireNonNull(Objects.java:235)
+	at com.localcache.LocalCache$Builder.cleanInterval(LocalCache.java:1296)
+	at com.benchmark.cache.CacheBenchmark.setup(CacheBenchmark.java:71)
+	at com.benchmark.cache.jmh_generated.CacheBenchmark_getCaffeine_jmhTest._jmh_tryInit_f_cachebenchmark0_G(CacheBenchmark_getCaffeine_jmhTest.java:451)
+	at com.benchmark.cache.jmh_generated.CacheBenchmark_getCaffeine_jmhTest.getCaffeine_Throughput(CacheBenchmark_getCaffeine_jmhTest.java:71)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:527)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:504)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+
+
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.getGuava
+# Parameters: (dataSize = 100, valueProfileSpec = LINES_10000)
+
+# Run progress: 8.33% complete, ETA 00:00:02
+# Fork: 1 of 1
+Iteration   1: <failure>
+
+java.lang.NullPointerException: interval
+	at java.base/java.util.Objects.requireNonNull(Objects.java:235)
+	at com.localcache.LocalCache$Builder.cleanInterval(LocalCache.java:1296)
+	at com.benchmark.cache.CacheBenchmark.setup(CacheBenchmark.java:71)
+	at com.benchmark.cache.jmh_generated.CacheBenchmark_getGuava_jmhTest._jmh_tryInit_f_cachebenchmark0_G(CacheBenchmark_getGuava_jmhTest.java:451)
+	at com.benchmark.cache.jmh_generated.CacheBenchmark_getGuava_jmhTest.getGuava_Throughput(CacheBenchmark_getGuava_jmhTest.java:71)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:527)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:504)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+
+
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.getLocalCache
+# Parameters: (dataSize = 100, valueProfileSpec = LINES_10000)
+
+# Run progress: 16.67% complete, ETA 00:00:02
+# Fork: 1 of 1
+Iteration   1: <failure>
+
+java.lang.NullPointerException: interval
+	at java.base/java.util.Objects.requireNonNull(Objects.java:235)
+	at com.localcache.LocalCache$Builder.cleanInterval(LocalCache.java:1296)
+	at com.benchmark.cache.CacheBenchmark.setup(CacheBenchmark.java:71)
+	at com.benchmark.cache.jmh_generated.CacheBenchmark_getLocalCache_jmhTest._jmh_tryInit_f_cachebenchmark0_G(CacheBenchmark_getLocalCache_jmhTest.java:451)
+	at com.benchmark.cache.jmh_generated.CacheBenchmark_getLocalCache_jmhTest.getLocalCache_Throughput(CacheBenchmark_getLocalCache_jmhTest.java:71)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:527)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:504)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+
+
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.getMapDB
+# Parameters: (dataSize = 100, valueProfileSpec = LINES_10000)
+
+# Run progress: 25.00% complete, ETA 00:00:01
+# Fork: 1 of 1
+Iteration   1: <failure>
+
+java.lang.NullPointerException: interval
+	at java.base/java.util.Objects.requireNonNull(Objects.java:235)
+	at com.localcache.LocalCache$Builder.cleanInterval(LocalCache.java:1296)
+	at com.benchmark.cache.CacheBenchmark.setup(CacheBenchmark.java:71)
+	at com.benchmark.cache.jmh_generated.CacheBenchmark_getMapDB_jmhTest._jmh_tryInit_f_cachebenchmark0_G(CacheBenchmark_getMapDB_jmhTest.java:451)
+	at com.benchmark.cache.jmh_generated.CacheBenchmark_getMapDB_jmhTest.getMapDB_Throughput(CacheBenchmark_getMapDB_jmhTest.java:71)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:527)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:504)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+
+
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.mixedCaffeine
+# Parameters: (dataSize = 100, valueProfileSpec = LINES_10000)
+
+# Run progress: 33.33% complete, ETA 00:00:01
+# Fork: 1 of 1
+Iteration   1: <failure>
+
+java.lang.NullPointerException: interval
+	at java.base/java.util.Objects.requireNonNull(Objects.java:235)
+	at com.localcache.LocalCache$Builder.cleanInterval(LocalCache.java:1296)
+	at com.benchmark.cache.CacheBenchmark.setup(CacheBenchmark.java:71)
+	at com.benchmark.cache.jmh_generated.CacheBenchmark_mixedCaffeine_jmhTest._jmh_tryInit_f_cachebenchmark0_G(CacheBenchmark_mixedCaffeine_jmhTest.java:451)
+	at com.benchmark.cache.jmh_generated.CacheBenchmark_mixedCaffeine_jmhTest.mixedCaffeine_Throughput(CacheBenchmark_mixedCaffeine_jmhTest.java:71)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:527)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:504)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+
+
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.mixedGuava
+# Parameters: (dataSize = 100, valueProfileSpec = LINES_10000)
+
+# Run progress: 41.67% complete, ETA 00:00:01
+# Fork: 1 of 1
+Iteration   1: <failure>
+
+java.lang.NullPointerException: interval
+	at java.base/java.util.Objects.requireNonNull(Objects.java:235)
+	at com.localcache.LocalCache$Builder.cleanInterval(LocalCache.java:1296)
+	at com.benchmark.cache.CacheBenchmark.setup(CacheBenchmark.java:71)
+	at com.benchmark.cache.jmh_generated.CacheBenchmark_mixedGuava_jmhTest._jmh_tryInit_f_cachebenchmark0_G(CacheBenchmark_mixedGuava_jmhTest.java:451)
+	at com.benchmark.cache.jmh_generated.CacheBenchmark_mixedGuava_jmhTest.mixedGuava_Throughput(CacheBenchmark_mixedGuava_jmhTest.java:71)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:527)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:504)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+
+
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.mixedLocalCache
+# Parameters: (dataSize = 100, valueProfileSpec = LINES_10000)
+
+# Run progress: 50.00% complete, ETA 00:00:01
+# Fork: 1 of 1
+Iteration   1: <failure>
+
+java.lang.NullPointerException: interval
+	at java.base/java.util.Objects.requireNonNull(Objects.java:235)
+	at com.localcache.LocalCache$Builder.cleanInterval(LocalCache.java:1296)
+	at com.benchmark.cache.CacheBenchmark.setup(CacheBenchmark.java:71)
+	at com.benchmark.cache.jmh_generated.CacheBenchmark_mixedLocalCache_jmhTest._jmh_tryInit_f_cachebenchmark0_G(CacheBenchmark_mixedLocalCache_jmhTest.java:451)
+	at com.benchmark.cache.jmh_generated.CacheBenchmark_mixedLocalCache_jmhTest.mixedLocalCache_Throughput(CacheBenchmark_mixedLocalCache_jmhTest.java:71)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:527)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:504)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+
+
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.mixedMapDB
+# Parameters: (dataSize = 100, valueProfileSpec = LINES_10000)
+
+# Run progress: 58.33% complete, ETA 00:00:01
+# Fork: 1 of 1
+Iteration   1: <failure>
+
+java.lang.NullPointerException: interval
+	at java.base/java.util.Objects.requireNonNull(Objects.java:235)
+	at com.localcache.LocalCache$Builder.cleanInterval(LocalCache.java:1296)
+	at com.benchmark.cache.CacheBenchmark.setup(CacheBenchmark.java:71)
+	at com.benchmark.cache.jmh_generated.CacheBenchmark_mixedMapDB_jmhTest._jmh_tryInit_f_cachebenchmark0_G(CacheBenchmark_mixedMapDB_jmhTest.java:451)
+	at com.benchmark.cache.jmh_generated.CacheBenchmark_mixedMapDB_jmhTest.mixedMapDB_Throughput(CacheBenchmark_mixedMapDB_jmhTest.java:71)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:527)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:504)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+
+
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.putCaffeine
+# Parameters: (dataSize = 100, valueProfileSpec = LINES_10000)
+
+# Run progress: 66.67% complete, ETA 00:00:00
+# Fork: 1 of 1
+Iteration   1: <failure>
+
+java.lang.NullPointerException: interval
+	at java.base/java.util.Objects.requireNonNull(Objects.java:235)
+	at com.localcache.LocalCache$Builder.cleanInterval(LocalCache.java:1296)
+	at com.benchmark.cache.CacheBenchmark.setup(CacheBenchmark.java:71)
+	at com.benchmark.cache.jmh_generated.CacheBenchmark_putCaffeine_jmhTest._jmh_tryInit_f_cachebenchmark0_G(CacheBenchmark_putCaffeine_jmhTest.java:451)
+	at com.benchmark.cache.jmh_generated.CacheBenchmark_putCaffeine_jmhTest.putCaffeine_Throughput(CacheBenchmark_putCaffeine_jmhTest.java:71)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:527)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:504)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+
+
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.putGuava
+# Parameters: (dataSize = 100, valueProfileSpec = LINES_10000)
+
+# Run progress: 75.00% complete, ETA 00:00:00
+# Fork: 1 of 1
+Iteration   1: <failure>
+
+java.lang.NullPointerException: interval
+	at java.base/java.util.Objects.requireNonNull(Objects.java:235)
+	at com.localcache.LocalCache$Builder.cleanInterval(LocalCache.java:1296)
+	at com.benchmark.cache.CacheBenchmark.setup(CacheBenchmark.java:71)
+	at com.benchmark.cache.jmh_generated.CacheBenchmark_putGuava_jmhTest._jmh_tryInit_f_cachebenchmark0_G(CacheBenchmark_putGuava_jmhTest.java:451)
+	at com.benchmark.cache.jmh_generated.CacheBenchmark_putGuava_jmhTest.putGuava_Throughput(CacheBenchmark_putGuava_jmhTest.java:71)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:527)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:504)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+
+
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.putLocalCache
+# Parameters: (dataSize = 100, valueProfileSpec = LINES_10000)
+
+# Run progress: 83.33% complete, ETA 00:00:00
+# Fork: 1 of 1
+Iteration   1: <failure>
+
+java.lang.NullPointerException: interval
+	at java.base/java.util.Objects.requireNonNull(Objects.java:235)
+	at com.localcache.LocalCache$Builder.cleanInterval(LocalCache.java:1296)
+	at com.benchmark.cache.CacheBenchmark.setup(CacheBenchmark.java:71)
+	at com.benchmark.cache.jmh_generated.CacheBenchmark_putLocalCache_jmhTest._jmh_tryInit_f_cachebenchmark0_G(CacheBenchmark_putLocalCache_jmhTest.java:451)
+	at com.benchmark.cache.jmh_generated.CacheBenchmark_putLocalCache_jmhTest.putLocalCache_Throughput(CacheBenchmark_putLocalCache_jmhTest.java:71)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:527)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:504)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+
+
+
+# JMH version: 1.37
+# VM version: JDK 17.0.16, OpenJDK 64-Bit Server VM, 17.0.16+8-Debian-1deb12u1
+# VM invoker: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+# VM options: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/jdk.internal.misc=ALL-UNNAMED
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: <none>
+# Measurement: 1 iterations, 2 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.benchmark.cache.CacheBenchmark.putMapDB
+# Parameters: (dataSize = 100, valueProfileSpec = LINES_10000)
+
+# Run progress: 91.67% complete, ETA 00:00:00
+# Fork: 1 of 1
+Iteration   1: <failure>
+
+java.lang.NullPointerException: interval
+	at java.base/java.util.Objects.requireNonNull(Objects.java:235)
+	at com.localcache.LocalCache$Builder.cleanInterval(LocalCache.java:1296)
+	at com.benchmark.cache.CacheBenchmark.setup(CacheBenchmark.java:71)
+	at com.benchmark.cache.jmh_generated.CacheBenchmark_putMapDB_jmhTest._jmh_tryInit_f_cachebenchmark0_G(CacheBenchmark_putMapDB_jmhTest.java:451)
+	at com.benchmark.cache.jmh_generated.CacheBenchmark_putMapDB_jmhTest.putMapDB_Throughput(CacheBenchmark_putMapDB_jmhTest.java:71)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:527)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:504)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+
+
+
+# Run complete. Total time: 00:00:02
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+NOTE: Current JVM experimentally supports Compiler Blackholes, and they are in use. Please exercise
+extra caution when trusting the results, look into the generated code to check the benchmark still
+works, and factor in a small probability of new VM bugs. Additionally, while comparisons between
+different JVMs are already problematic, the performance difference caused by different Blackhole
+modes can be very significant. Please make sure you use the consistent Blackhole mode for comparisons.
+
+Benchmark  Mode  Cnt  Score   Error  Units
+
+Benchmark result is saved to reports/20251101-221132Z/results.json

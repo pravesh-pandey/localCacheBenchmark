@@ -1,5 +1,18 @@
 [
   {
+    "id": "20251101-221132Z",
+    "label": "2025-11-01 22:11:32 UTC",
+    "dataSize": 100,
+    "payload": {
+      "lines": 10000,
+      "profile": "LINES_10000"
+    },
+    "summaryPath": "reports/20251101-221132Z/summary.json",
+    "resultsPath": "reports/20251101-221132Z/results.json",
+    "logPath": "reports/20251101-221132Z/benchmark-output.log",
+    "jmhArgs": "-wi 0 -i 1 -f 1 -p dataSize=100 -p valueProfileSpec=LINES_10000"
+  },
+  {
     "id": "20251101-215526Z",
     "label": "2025-11-01 21:55:26 UTC",
     "dataSize": 1000,
